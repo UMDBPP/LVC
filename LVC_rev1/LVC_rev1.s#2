@@ -8327,7 +8327,6 @@ www.irf.com&lt;p&gt;
 <sheets>
 <sheet>
 <plain>
-<text x="238.76" y="7.62" size="2.286" layer="94">1.2</text>
 </plain>
 <instances>
 <instance part="IN" gate="G$1" x="5.08" y="147.32"/>
@@ -8354,7 +8353,7 @@ www.irf.com&lt;p&gt;
 <instance part="R3" gate="G$1" x="116.84" y="147.32"/>
 <instance part="PRGM" gate="G$1" x="203.2" y="124.46"/>
 <instance part="U$9" gate="G$1" x="226.06" y="121.92" rot="R90"/>
-<instance part="FRAME2" gate="G$1" x="0" y="0" smashed="yes"/>
+<instance part="FRAME2" gate="G$1" x="0" y="0"/>
 <instance part="FRAME2" gate="G$2" x="147.32" y="0"/>
 <instance part="SUPPLY4" gate="G$1" x="177.8" y="144.78" rot="R90"/>
 <instance part="U1" gate="G$1" x="50.8" y="104.14"/>
@@ -8698,7 +8697,6 @@ www.irf.com&lt;p&gt;
 <pinref part="T3" gate="G$1" pin="S"/>
 <wire x1="124.46" y1="60.96" x2="129.54" y2="60.96" width="0.1524" layer="91"/>
 <wire x1="109.22" y1="60.96" x2="121.92" y2="60.96" width="0.1524" layer="91"/>
-<junction x="121.92" y="60.96"/>
 </segment>
 </net>
 <net name="N$5" class="0">
@@ -8793,7 +8791,6 @@ www.irf.com&lt;p&gt;
 <segment>
 <pinref part="U2" gate="G$1" pin="(PCINT7/ICP/OC0B/ADC7)PA7"/>
 <wire x1="152.4" y1="106.68" x2="162.56" y2="106.68" width="0.1524" layer="91"/>
-<label x="157.48" y="106.68" size="1.778" layer="95"/>
 </segment>
 <segment>
 <wire x1="177.8" y1="55.88" x2="177.8" y2="63.5" width="0.1524" layer="91"/>
