@@ -8813,6 +8813,12 @@ www.irf.com&lt;p&gt;
 </sheets>
 <errors>
 <approved hash="104,1,38.1,106.68,U1,IN,V_BATT,,,"/>
+<approved hash="113,1,9.48267,150.055,IN,,,,,"/>
+<approved hash="113,1,214.037,162.365,OUT,,,,,"/>
+<approved hash="113,1,133.35,59.6815,S_REG,,,,,"/>
+<approved hash="113,1,57.15,52.0785,S_LED_B,,,,,"/>
+<approved hash="113,1,124.356,92.606,FRAME2,,,,,"/>
+<approved hash="113,1,181.415,52.6627,J1,,,,,"/>
 </errors>
 </schematic>
 </drawing>
