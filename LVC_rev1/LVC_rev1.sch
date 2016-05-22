@@ -8321,7 +8321,7 @@ www.irf.com&lt;p&gt;
 <part name="T1" library="transistor-power" deviceset="DMP4047SK3" device=""/>
 <part name="R13" library="rcl" deviceset="R-US_" device="R0603" value="100k"/>
 <part name="T4" library="transistor-small-signal" deviceset="2N7002P" device=""/>
-<part name="T6" library="transistor-small-signal" deviceset="2N7002P" device=""/>
+<part name="T2" library="transistor-small-signal" deviceset="2N7002P" device=""/>
 <part name="C3" library="rcl" deviceset="C-EU" device="C0603" value="0.1UF"/>
 </parts>
 <sheets>
@@ -8373,7 +8373,7 @@ www.irf.com&lt;p&gt;
 <instance part="T1" gate="G$1" x="187.96" y="162.56" rot="R90"/>
 <instance part="R13" gate="G$1" x="99.06" y="66.04" rot="R270"/>
 <instance part="T4" gate="G$1" x="88.9" y="53.34"/>
-<instance part="T6" gate="G$1" x="203.2" y="144.78" rot="R90"/>
+<instance part="T2" gate="G$1" x="203.2" y="144.78" rot="R90"/>
 <instance part="C3" gate="G$1" x="33.02" y="96.52"/>
 </instances>
 <busses>
@@ -8433,7 +8433,7 @@ www.irf.com&lt;p&gt;
 <pinref part="R7" gate="G$1" pin="2"/>
 <junction x="210.82" y="144.78"/>
 <wire x1="210.82" y1="144.78" x2="208.28" y2="144.78" width="0.1524" layer="91"/>
-<pinref part="T6" gate="G$1" pin="S"/>
+<pinref part="T2" gate="G$1" pin="S"/>
 </segment>
 <segment>
 <pinref part="R8" gate="G$1" pin="2"/>
@@ -8572,7 +8572,7 @@ www.irf.com&lt;p&gt;
 <label x="215.9" y="134.62" size="1.778" layer="95"/>
 <pinref part="R7" gate="G$1" pin="1"/>
 <wire x1="210.82" y1="134.62" x2="228.6" y2="134.62" width="0.1524" layer="91"/>
-<pinref part="T6" gate="G$1" pin="G"/>
+<pinref part="T2" gate="G$1" pin="G"/>
 <wire x1="205.74" y1="139.7" x2="205.74" y2="134.62" width="0.1524" layer="91"/>
 <wire x1="205.74" y1="134.62" x2="210.82" y2="134.62" width="0.1524" layer="91"/>
 <junction x="210.82" y="134.62"/>
@@ -8762,7 +8762,7 @@ www.irf.com&lt;p&gt;
 <junction x="195.58" y="144.78"/>
 <pinref part="T1" gate="G$1" pin="G"/>
 <wire x1="195.58" y1="160.02" x2="185.42" y2="160.02" width="0.1524" layer="91"/>
-<pinref part="T6" gate="G$1" pin="D"/>
+<pinref part="T2" gate="G$1" pin="D"/>
 </segment>
 </net>
 <net name="PA2" class="0">

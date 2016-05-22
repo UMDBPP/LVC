@@ -1896,7 +1896,7 @@ Please make sure your boards conform to these design rules.</description>
 <attribute name="NAME" x="27.305" y="37.211" size="1.27" layer="25"/>
 <attribute name="VALUE" x="29.083" y="34.671" size="1.27" layer="27"/>
 </element>
-<element name="T6" library="transistor-small-signal" package="SOT23" value="2N7002P" x="7.366" y="20.828" smashed="yes" rot="R180">
+<element name="T2" library="transistor-small-signal" package="SOT23" value="2N7002P" x="7.366" y="20.828" smashed="yes" rot="R180">
 <attribute name="NAME" x="5.461" y="20.447" size="1.27" layer="25" rot="R180"/>
 <attribute name="VALUE" x="9.271" y="24.003" size="1.27" layer="27" rot="R180"/>
 </element>
@@ -1955,7 +1955,7 @@ Please make sure your boards conform to these design rules.</description>
 <wire x1="38.1" y1="53.34" x2="38.1" y2="51.904" width="0.254" layer="1"/>
 <contactref element="T4" pad="2"/>
 <wire x1="31.765" y1="36.41" x2="32.004" y2="36.41" width="0.254" layer="1"/>
-<contactref element="T6" pad="2"/>
+<contactref element="T2" pad="2"/>
 <wire x1="32.004" y1="36.41" x2="33.909" y2="36.41" width="0.254" layer="1"/>
 <wire x1="6.643" y1="24.003" x2="6.416" y2="24.003" width="0.254" layer="1"/>
 <wire x1="6.416" y1="24.003" x2="6.416" y2="21.928" width="0.254" layer="1"/>
@@ -2045,7 +2045,7 @@ Please make sure your boards conform to these design rules.</description>
 <signal name="OUT_GATE">
 <contactref element="U2" pad="12"/>
 <contactref element="R7" pad="1"/>
-<contactref element="T6" pad="1"/>
+<contactref element="T2" pad="1"/>
 <wire x1="8.343" y1="24.003" x2="8.316" y2="24.003" width="0.254" layer="1"/>
 <wire x1="8.316" y1="24.003" x2="8.316" y2="21.928" width="0.254" layer="1"/>
 <wire x1="16.758" y1="34.29" x2="12.954" y2="34.29" width="0.254" layer="1"/>
@@ -2234,7 +2234,7 @@ Please make sure your boards conform to these design rules.</description>
 <wire x1="8.89" y1="17.78" x2="7.62" y2="17.78" width="0.254" layer="1"/>
 <wire x1="7.62" y1="17.78" x2="7.62" y2="17" width="0.254" layer="1"/>
 <wire x1="7.62" y1="17" x2="7.36" y2="17" width="0.254" layer="1"/>
-<contactref element="T6" pad="3"/>
+<contactref element="T2" pad="3"/>
 <wire x1="7.366" y1="19.728" x2="7.366" y2="18.034" width="0.254" layer="1"/>
 <wire x1="7.366" y1="18.034" x2="7.62" y2="18.034" width="0.254" layer="1"/>
 <wire x1="7.62" y1="18.034" x2="7.62" y2="17.78" width="0.254" layer="1"/>

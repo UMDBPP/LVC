@@ -8327,6 +8327,7 @@ www.irf.com&lt;p&gt;
 <sheets>
 <sheet>
 <plain>
+<text x="238.76" y="7.62" size="2.286" layer="94">1.2</text>
 </plain>
 <instances>
 <instance part="IN" gate="G$1" x="5.08" y="147.32"/>
@@ -8353,7 +8354,7 @@ www.irf.com&lt;p&gt;
 <instance part="R3" gate="G$1" x="116.84" y="147.32"/>
 <instance part="PRGM" gate="G$1" x="203.2" y="124.46"/>
 <instance part="U$9" gate="G$1" x="226.06" y="121.92" rot="R90"/>
-<instance part="FRAME2" gate="G$1" x="0" y="0"/>
+<instance part="FRAME2" gate="G$1" x="0" y="0" smashed="yes"/>
 <instance part="FRAME2" gate="G$2" x="147.32" y="0"/>
 <instance part="SUPPLY4" gate="G$1" x="177.8" y="144.78" rot="R90"/>
 <instance part="U1" gate="G$1" x="50.8" y="104.14"/>
@@ -8812,6 +8813,12 @@ www.irf.com&lt;p&gt;
 </sheets>
 <errors>
 <approved hash="104,1,38.1,106.68,U1,IN,V_BATT,,,"/>
+<approved hash="113,1,9.48267,150.055,IN,,,,,"/>
+<approved hash="113,1,214.037,162.365,OUT,,,,,"/>
+<approved hash="113,1,133.35,59.6815,S_REG,,,,,"/>
+<approved hash="113,1,57.15,52.0785,S_LED_B,,,,,"/>
+<approved hash="113,1,124.356,92.606,FRAME2,,,,,"/>
+<approved hash="113,1,181.415,52.6627,J1,,,,,"/>
 </errors>
 </schematic>
 </drawing>
