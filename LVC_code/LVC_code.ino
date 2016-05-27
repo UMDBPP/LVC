@@ -35,7 +35,7 @@ Set switch to RUN, observe only the green LED on
 
 // Behavioral Constants
 #define LOAD_THRESHOLD 663 // battery threshold with load. 663/1023*5*3: 9.72 volts. *5 becuase this is a 5V microcontroller, *3 becuase this is a 3-cell LiPo (~3.25v per cell threshold). *** From testing, actual cutoff appears to be 9.67V.
-#define NO_LOAD_THRESHOLD 720 // battery threshold with no load. 720/1023*5*3: 10.56 volts (Arbitrary, but at least 0.5v greater than Load Threshold voltage). From testing, actual value appears to be 10.50V.
+#define NO_LOAD_THRESHOLD 720 // battery threshold with no load. 720/1023*5*3: 10.56 volts (Arbitrary, but at least 0.5v greater than Load Threshold voltage). *** From testing, actual value appears to be 10.50V.
 #define WAIT_TIME 5000 // time after battery voltage drops below threshold with load before the enable pin is turned off, putting the system into ultra low power mode
 
 // Variable declaration
