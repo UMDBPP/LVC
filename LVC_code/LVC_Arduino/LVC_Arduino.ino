@@ -80,7 +80,7 @@ void loop() {
 			else { // if the battery depletion reading was in error
 				battery_status = true; // reactivate the battery
 				time = 0; // reset the inactivity countdown
-				delay(1000); // wait one second for transitents to settle
+				delay(1000); // wait one second for transients to settle
 			}
 		}
 		else { // if the inactivity countdown has expired
