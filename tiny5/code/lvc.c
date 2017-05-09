@@ -14,12 +14,12 @@ for a custom setting set with a potentiometer on the voltage divider. Thus,
 the program is independent of the setting. */
 
 #define F_CPU 128000UL /* 128 kHz (power consumption: ~ 0.02 mA at 1.8 V) */
-#define LOAD_THRESHOLD 166 /* 3.25 V cutoff: 3.25/5 * 255) */
+#define LOAD_THRESHOLD 166 /* TODO: find value for 3.25 V cutoff */
 #define NO_LOAD_THRESHOLD 180 /* arbitrary value, TODO: find value */
 #define LOAD PB1 /* pin for load MOSFET */
 
 /* global variables */
-volatile uint16_t sec; /* time elapse in seconds */
+volatile uint16_t sec; /* time elapsed in seconds */
 
 int main() {
 	/* init timer */ 
