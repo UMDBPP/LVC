@@ -30,6 +30,7 @@ int main() {
     uint8_t sreg;
     uint8_t n;
 
+    CLKMSR = 1; /* run at 128 kHz */
     PORTB = ((1 << LOAD_MOSFET) | (1 << LVC_MOSFET)); /* keep things on */
 
     PRR = 0; /* power reduction module: allow timer, ADC */
