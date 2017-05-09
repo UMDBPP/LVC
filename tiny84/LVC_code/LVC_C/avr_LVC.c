@@ -3,7 +3,7 @@
 // Revised by: Aravind Ramakrishnan on 23 May, 2016
 // Revised by: William Cooper Gilbert on 24 May, 2016
 // Rewritten by: Aravind Ramakrishnan on 26 June, 2016 (from Arduino to AVR C)
-// Thanks given to Nick Rossomando for guidance
+// Revised by Aravind Ramakrishnan on 10 November 2016
 
 /*
 PURPOSE
@@ -40,8 +40,12 @@ Set switch to RUN, observe only the green LED on
 #define RED_LED PB2 // digital pin for the Red LED, meaning the battery is depleted
 
 /* Behavioral Constants */
-#define LOAD_THRESHOLD 663 // battery threshold with load. 663/1023*5*3: 9.72 volts. *5 becuase this is a 5V microcontroller, *3 becuase this is a 3-cell LiPo (~3.25v per cell threshold). *** From testing, actual cutoff appears to be 9.67V.
-#define NO_LOAD_THRESHOLD 700 // battery threshold with no load. 700/1023*5*3: 10.26 volts (Arbitrary, but at least 0.5v greater than Load Threshold voltage). *** From testing, actual value appears to be 10.50V.
+#ifndef CELLS
+	#define CELLS 2 // default to 2 cells. Compile time input for cell number
+#endif
+// Note that the inconsistencies in values (eg. 675 instead of 663) is from testing values
+#define LOAD_THRESHOLD ((uint16_t)(CELLS * 675 / 3)) // battery threshold with load. 663/1023*5*3: 9.72 volts. *5 becuase this is a 5V microcontroller, *3 becuase this is a 3-cell LiPo (~3.25v per cell threshold).
+#define NO_LOAD_THRESHOLD ((uint16_t)(CELLS * 715 / 3)) // battery threshold with no load. 700/1023*5*3: 10.26 volts (Arbitrary, but at least 0.5v greater than Load Threshold voltage). *** From testing, actual value appears to be 10.50V.
 #define WAIT_TIME 5000 // time after battery voltage drops below threshold with load before the enable pin is turned off, putting the system into ultra low power mode
 
 /* Function Prototypes */
