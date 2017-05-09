@@ -59,21 +59,21 @@ int main() {
         else {
             goto get_time;
     time_return_0:
-                sec_holder = sec_read + 0x5;
-                n++;
+            sec_holder = sec_read + 0x5;
+            n++;
     time_return_1:
-                if (sec_read != sec_holder) {
-                    goto get_adc;
+            if (sec_read != sec_holder) {
+                goto get_adc;
     adc_return_1:
-                    if (adc_read < LOAD_THRESHOLD) {
-                        goto get_time;
-                    }
-                    else {
-                        n = 0;
-                        goto loop;
-                    }
+                if (adc_read < LOAD_THRESHOLD) {
+                    goto get_time;
                 }
-                goto kill;
+                else {
+                    n = 0;
+                    goto loop;
+                }
+            }
+            goto kill;
         }
     goto loop;
 
@@ -96,8 +96,8 @@ int main() {
         TIMSK0 = 0;
         ADCSRA = 0;
         DIDR0 = 0;
-        PRR = 0x3; /* power reduction timer and adc */
-        PORTB = 0; /* load and mcu off */
+        PRR = 0x3; /* power reduction: timer and adc */
+        PORTB &= ~((1 << LOAD_MOSFET) | (1 << LVC_MOSFET)); /* turn all off */
         while(1); /* shutdown may not be immediate */
 
     return 0;
