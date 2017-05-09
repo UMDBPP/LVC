@@ -123,7 +123,7 @@ void halt(char *battery_status) {
 	PORTA &= ~(1 << LOAD); // turn the load OFF
 	PORTB &= ~(1 << GREEN_LED); // turn the green LED OFF
 	PORTB |= (1 << RED_LED); // turn the red LED ON
-	*battery_status = 'd'; // turn battery off
+	*battery_status = 'd'; // turn battery status to disabled
 	_delay_ms(3000); // wait three seconds for transients to settle
 }
 
@@ -133,7 +133,7 @@ void wait(int *time) {
 }
 
 void resurrect(char *battery_status, int *time) {
-	*battery_status = 'a';
+	*battery_status = 'a'; // battery status to active
 	*time = 0;
 	_delay_ms(3000); // wait three seconds for transients to settle
 }
