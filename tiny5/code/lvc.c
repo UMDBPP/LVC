@@ -18,7 +18,7 @@ the program is independent of the setting. */
 /* 128 kHz (power consumption: ~ 0.02 mA at 1.8 V) */
 #define F_CPU               128000UL
 #define LOAD_THRESHOLD      166
-#define NO_LOAD_THRESHOLD	174 /* hysteresis level */
+#define NO_LOAD_THRESHOLD   174 /* hysteresis level */
 #define ADC                 PB0
 #define LOAD_MOSFET         PB1 /* pin for load MOSFET */
 #define LVC_MOSFET          PB2 /* pin for LVC MOSFET */
