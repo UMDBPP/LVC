@@ -1,9 +1,11 @@
 #include <avr/io.h>
 #include <avr/interrupt.h>
+#include <avr/pgmspace.h>
 #include <stdint.h>
 
-/* The purpose of this program is to prevent permanent damage of LiPo batteries
-due to deep discharge where the battery is depleted beyond 80% of its capacity.
+/* The purpose of this program (meant for ATTiny5 mcu) is to prevent permanent
+damage of LiPo batteries due to deep discharge where the battery is depleted
+beyond 80% of its capacity.
 
 This is achieved by using MOSFET transistor as a switch.
 
@@ -15,7 +17,8 @@ the program is independent of the setting. */
 
 /* 128 kHz (power consumption: ~ 0.02 mA at 1.8 V) */
 #define F_CPU               128000UL
-#define LOAD_THRESHOLD      166 /* TODO: find value for 3.25 V cutoff */
+#define LOAD_THRESHOLD      166
+#define NO_LOAD_THRESHOLD	174 /* hysteresis level */
 #define ADC                 PB0
 #define LOAD_MOSFET         PB1 /* pin for load MOSFET */
 #define LVC_MOSFET          PB2 /* pin for LVC MOSFET */
@@ -23,19 +26,32 @@ the program is independent of the setting. */
 /* global variables */
 volatile uint16_t sec; /* time elapsed in seconds */
 
+/* so we have a lot of unused flash ... */
+const uint8_t message0[] PROGMEM = {0xCA,0xFE,0xBA,0xBE};
+const uint8_t message1[] PROGMEM = "\n\nMade by Aravind Ramakrishnan, \
+Camden Miller, and Nick Rossomando of the Univeristy of Maryland Nearspace \
+Program\n";
+const uint8_t message2[] PROGMEM = "GO TERPS!!!\n\n";
+const uint8_t message3[] PROGMEM = "32 bytes of memory ought to be enough \
+for anybody!\n";
+const uint8_t message4[] PROGMEM = "The answer is 42.\n";
+const uint8_t message5[] PROGMEM = "And there was much rejoicing.\n";
+
 int main() {
     uint16_t sec_read; /* current timer value */
     uint16_t sec_holder;
     uint8_t adc_read; /* current ADC value */
     uint8_t sreg;
+    uint8_t cycles;
     uint8_t n;
 
     CLKMSR = 1; /* run at 128 kHz */
-    PORTB = ((1 << LOAD_MOSFET) | (1 << LVC_MOSFET)); /* keep things on */
+    PORTB = ((1 << LVC_MOSFET) | (1 << LOAD_MOSFET)); /* keep things on */
 
     PRR = 0; /* power reduction module: allow timer, ADC */
     sec = 0;
     n = 0;
+    cycles = 0;
 
     /* init timer */
     /* prescalar 1024, CTC mode -> 1 second is 125 cycles */
@@ -51,6 +67,8 @@ int main() {
     ADCSRA = (1 << ADEN);
     DIDR0 = (1 << ADC0D);
 
+    resurrect:
+        PORTB |= (1 << LOAD_MOSFET);
     loop:
         goto get_adc;
     adc_return_0:
@@ -58,6 +76,9 @@ int main() {
             goto loop;
         }
         else {
+            PORTB &= ~(1 << LOAD_MOSFET); /* if low voltage, kill load */
+            cycles++;
+            if (cycles == 10) goto kill;
             goto get_time;
     time_return_0:
             sec_holder = sec_read + 0x5;
@@ -66,12 +87,12 @@ int main() {
             if (sec_read != sec_holder) {
                 goto get_adc;
     adc_return_1:
-                if (adc_read < LOAD_THRESHOLD) {
+                if (adc_read < NO_LOAD_THRESHOLD) {
                     goto get_time;
                 }
                 else {
                     n = 0;
-                    goto loop;
+                    goto resurrect;
                 }
             }
             goto kill;
@@ -98,7 +119,7 @@ int main() {
         ADCSRA = 0;
         DIDR0 = 0;
         PRR = 0x3; /* power reduction: timer and adc */
-        PORTB &= ~((1 << LOAD_MOSFET) | (1 << LVC_MOSFET)); /* turn all off */
+        PORTB &= ~(1 << LVC_MOSFET); /* turn all off */
         while(1); /* shutdown may not be immediate */
 
     return 0;

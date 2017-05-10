@@ -10,7 +10,7 @@ popd &> /dev/null
 set -e
 
 # begin compiliation
-avr-gcc -I. -Os -funsigned-char -funsigned-bitfields -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -finline-functions -ansi -pedantic-errors -Wall -Wextra -Wshadow -mmcu=attiny5 -c $directory/lvc.c -o $directory/lvc.out
+avr-gcc -I. -Os -funsigned-char -funsigned-bitfields -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -finline-functions -ansi -pedantic-errors -Wall -Wextra -Wshadow -Werror -mmcu=attiny5 -c $directory/lvc.c -o $directory/lvc.out
 
 #avr-gcc -I. -Os -funsigned-char -funsigned-bitfields -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -finline-functions -ansi -pedantic-errors -Wall -Wextra -Wshadow -Werror -mmcu=attiny5 -S $directory/lvc.c -o $directory/lvc.S
 
