@@ -26,24 +26,23 @@ the program is independent of the setting. */
 /* global variables */
 volatile uint16_t sec; /* time elapsed in seconds */
 
-/* so we have a lot of unused flash ... */
+/* so we're only using half of the MCU's flash ... let's burn some more */
 const uint8_t message0[] PROGMEM = {0xCA,0xFE,0xBA,0xBE};
 const uint8_t message1[] PROGMEM = "\n\nMade by Aravind Ramakrishnan, \
 Camden Miller, and Nick Rossomando of the Univeristy of Maryland Nearspace \
 Program\n";
 const uint8_t message2[] PROGMEM = "GO TERPS!!!\n\n";
 const uint8_t message3[] PROGMEM = "32 bytes of memory ought to be enough \
-for anybody!\n";
-const uint8_t message4[] PROGMEM = "The answer is 42.\n";
-const uint8_t message5[] PROGMEM = "And there was much rejoicing.\n";
+for anybody :P\n";
 
+/* program begin */
 int main() {
     uint16_t sec_read; /* current timer value */
     uint16_t sec_holder;
     uint8_t adc_read; /* current ADC value */
     uint8_t sreg;
-    uint8_t cycles;
-    uint8_t n;
+    uint8_t cycles; /* current number of power cycles */
+    uint8_t n; /* essentially a boolean saying which mode we are in */
 
     CLKMSR = 1; /* run at 128 kHz */
     PORTB = ((1 << LVC_MOSFET) | (1 << LOAD_MOSFET)); /* keep things on */
@@ -78,13 +77,13 @@ int main() {
         else {
             PORTB &= ~(1 << LOAD_MOSFET); /* if low voltage, kill load */
             cycles++;
-            if (cycles == 10) goto kill;
+            if (cycles == 0xA) goto kill; /* only allow 10 power cycles */
             goto get_time;
     time_return_0:
-            sec_holder = sec_read + 0x5;
+            sec_holder = sec_read + 0x5; /* 5 second timeout */
             n++;
     time_return_1:
-            if (sec_read != sec_holder) {
+            if (sec_read <= sec_holder) {
                 goto get_adc;
     adc_return_1:
                 if (adc_read < NO_LOAD_THRESHOLD) {
@@ -120,7 +119,7 @@ int main() {
         DIDR0 = 0;
         PRR = 0x3; /* power reduction: timer and adc */
         PORTB &= ~(1 << LVC_MOSFET); /* turn all off */
-        while(1); /* shutdown may not be immediate */
+        while(1); /* reaching return from main is undefined behavior */
 
     return 0;
 }
