@@ -3,6 +3,8 @@
 #include <avr/pgmspace.h>
 #include <stdint.h>
 
+/* Aravind Ramakrishnan - 08 July 2017 */
+
 /* The purpose of this program (meant for ATTiny5 mcu) is to prevent permanent
 damage of LiPo batteries due to deep discharge where the battery is depleted
 beyond 80% of its capacity.
@@ -15,7 +17,7 @@ way switch: one for a standard three cell, one for standard two cell, and one
 for a custom setting set with a potentiometer on the voltage divider. Thus,
 the program is independent of the setting. */
 
-/* 128 kHz (power consumption: ~ 0.02 mA at 1.8 V) */
+/* 128 kHz (power consumption: ~ 50 uA at 1.8 V) */
 #define F_CPU               128000UL
 #define LOAD_THRESHOLD      166
 #define NO_LOAD_THRESHOLD   174 /* hysteresis level */
@@ -61,8 +63,8 @@ int main() {
     TIMSK0 = (1 << OCIE0A);
 
     /* init ADC */
-    /* prescalar 2, ADC0 -> pin PB0 */
-    ADMUX = 0;
+    /* prescalar 2, ADC2 -> pin PB2 */
+    ADMUX = 0x2;
     ADCSRA = (1 << ADEN);
     DIDR0 = (1 << ADC0D);
 
