@@ -21,9 +21,9 @@ the program is independent of the setting. */
 #define F_CPU               128000UL
 #define LOAD_THRESHOLD      166
 #define NO_LOAD_THRESHOLD   174 /* hysteresis level */
-#define ADC                 PB0
+#define ADC                 PB2
 #define LOAD_MOSFET         PB1 /* pin for load MOSFET */
-#define LVC_MOSFET          PB2 /* pin for LVC MOSFET */
+#define LVC_MOSFET          PB0 /* pin for LVC MOSFET */
 
 /* global variables */
 volatile uint16_t sec; /* time elapsed in seconds */
