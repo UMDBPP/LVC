@@ -31,20 +31,19 @@ as well as using PWM. */
 
 /* global variables */
 volatile uint16_t sec; /* time elapsed in seconds */
+uint8_t sec_frac; /* we operate timer in quarter seconds */
 
-/* so we're only using half of the MCU's flash ... let's burn some more */
+/* so we're only using some of the MCU's flash ... let's burn some more */
 const uint8_t message0[] PROGMEM = {0xCA,0xFE,0xBA,0xBE}; /* this aint Java */
-const uint8_t message1[] PROGMEM = "\n\nMade by Aravind Ramakrishnan, \
+const uint8_t message1[] PROGMEM = "\nMade by Aravind Ramakrishnan, \
 Camden Miller, and Nick Rossomando of the Univeristy of Maryland Nearspace \
 Program\n";
-const uint8_t message2[] PROGMEM = "GO TERPS!!!\n\n";
 const uint8_t message3[] PROGMEM = "32 bytes of memory ought to be enough \
-for anybody :P\n";
+for anyone!";
 
 /* program begin */
 int main() {
     uint16_t sec_read; /* current timer value */
-    uint8_t sec_frac; /* we operate timer in quarter seconds */
     uint16_t sec_holder;
     uint8_t adc_read; /* current ADC value */
     uint8_t sreg;
