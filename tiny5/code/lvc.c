@@ -3,7 +3,7 @@
 #include <avr/pgmspace.h>
 #include <stdint.h>
 
-/* Aravind Ramakrishnan - 08 July 2017 */
+/* Aravind Ramakrishnan - 12 July 2017 */
 
 /* The purpose of this program (meant for ATTiny5 mcu) is to prevent permanent
 damage of LiPo batteries due to deep discharge where the battery is depleted
@@ -15,7 +15,11 @@ The program will use an ADC reading coming off the battery and voltage divider
 to determine the voltage. There will be three settings determined with a three
 way switch: one for a standard three cell, one for standard two cell, and one
 for a custom setting set with a potentiometer on the voltage divider. Thus,
-the program is independent of the setting. */
+the program is independent of the setting.
+
+There will be two blinking LEDs on the device. The color will be determined by
+hardware, and they will be driven by the mcu. To save power, we are blinking
+as well as using PWM. */
 
 /* 128 kHz (power consumption: ~ 50 uA at 1.8 V) */
 #define F_CPU               128000UL
@@ -23,13 +27,13 @@ the program is independent of the setting. */
 #define NO_LOAD_THRESHOLD   174 /* hysteresis level */
 #define ADC                 PB2
 #define LOAD_MOSFET         PB1 /* pin for load MOSFET */
-#define LVC_MOSFET          PB0 /* pin for LVC MOSFET */
+#define LED_OUT             PB0 /* pin for PWM on LED (OC0A) */
 
 /* global variables */
 volatile uint16_t sec; /* time elapsed in seconds */
 
 /* so we're only using half of the MCU's flash ... let's burn some more */
-const uint8_t message0[] PROGMEM = {0xCA,0xFE,0xBA,0xBE};
+const uint8_t message0[] PROGMEM = {0xCA,0xFE,0xBA,0xBE}; /* this aint Java */
 const uint8_t message1[] PROGMEM = "\n\nMade by Aravind Ramakrishnan, \
 Camden Miller, and Nick Rossomando of the Univeristy of Maryland Nearspace \
 Program\n";
@@ -40,33 +44,43 @@ for anybody :P\n";
 /* program begin */
 int main() {
     uint16_t sec_read; /* current timer value */
+    uint8_t sec_frac; /* we operate timer in quarter seconds */
     uint16_t sec_holder;
     uint8_t adc_read; /* current ADC value */
     uint8_t sreg;
     uint8_t cycles; /* current number of power cycles */
     uint8_t n; /* essentially a boolean saying which mode we are in */
 
-    CLKMSR = 1; /* run at 128 kHz */
-    PORTB = ((1 << LVC_MOSFET) | (1 << LOAD_MOSFET)); /* keep things on */
+    CLKMSR = 0x1; /* run at 128 kHz */
+    CLKPSR = 0; /* clock prescalar to 1 */
+    DDRB = (1 << LOAD_MOSFET);
+    PORTB = (1 << LOAD_MOSFET); /* keep things on */
 
     PRR = 0; /* power reduction module: allow timer, ADC */
     sec = 0;
+    sec_frac = 0;
     n = 0;
     cycles = 0;
 
-    /* init timer */
+    /* enable watchdog timer - 0.25 sec timeout */
+    WDTCSR = 0x3; /* (1 << WDP0) | (1 << WDP1) */
+    WDTCSR |= (1 << WDIE);
+
+    /* init timer for PWM */
     /* prescalar 1024, CTC mode -> 1 second is 125 cycles */
-    TCNT0 = 0;
-    TCCR0A = 0;
-    TCCR0B = (1 << CS02) | ( 1 << CS00) | (1 << WGM02);
-    OCR0A = 0x7D; /* 125 for 1 second */
-    TIMSK0 = (1 << OCIE0A);
+    TCCR0A = (1 << WGM00); /* 8-bit fast PWM */
+    TCCR0B = (1 << WGM02);
+    TCCR0B |= (1 << CS01); /* prescalar 8 */
+    OCR0A = 0x80; /* 50% duty cycle */
+    DDRB |= (1 << LED_OUT); /* enable ability to use LED pin */
 
     /* init ADC */
     /* prescalar 2, ADC2 -> pin PB2 */
     ADMUX = 0x2;
     ADCSRA = (1 << ADEN);
-    DIDR0 = (1 << ADC0D);
+    DIDR0 = (1 << ADC2D);
+
+    sei();
 
     resurrect:
         PORTB |= (1 << LOAD_MOSFET);
@@ -116,16 +130,28 @@ int main() {
         goto time_return_1;
 
     kill:
+        cli();
         TIMSK0 = 0;
+        TCCR0A = 0;
         ADCSRA = 0;
         DIDR0 = 0;
         PRR = 0x3; /* power reduction: timer and adc */
-        PORTB &= ~(1 << LVC_MOSFET); /* turn all off */
-        while(1); /* reaching return from main is undefined behavior */
+        WDTCSR = 0; /* WDTCSR &= ~(1 << WDE); WDTCSR &= ~(1 << WDIE) */
+        SMCR = 0x5; /* (1 << SE) | (1 << SM1) */
+        __asm__("sleep");
+
+        while(1);
 
     return 0;
 }
 
-ISR(TIM0_COMPA_vect) {
-    sec++;
+ISR(WDT_vect) {
+    sec_frac++;
+    TCCR0A &= (1 << COM0A1);
+    PORTB &= ~(1 << LED_OUT);
+    if (sec_frac == 0x4) {
+        sec++;
+        sec_frac = 0;
+        TCCR0A |= (1 << COM0A1); /* blink 0.25 sec per sec */
+    }
 }
