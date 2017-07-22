@@ -3653,7 +3653,7 @@ Source: AVX .. aphvc.pdf</description>
 <part name="P+1" library="supply1" deviceset="VCC" device=""/>
 <part name="P+2" library="supply1" deviceset="V+" device=""/>
 <part name="P+3" library="supply1" deviceset="VCC" device=""/>
-<part name="C4" library="resistor" deviceset="C-US" device="C0603" value="1uF"/>
+<part name="C4" library="resistor" deviceset="C-US" device="C0603" value="100nF"/>
 <part name="GND5" library="supply1" deviceset="GND" device=""/>
 <part name="U2" library="AR_mcu" deviceset="ATTINY5" device=""/>
 </parts>
