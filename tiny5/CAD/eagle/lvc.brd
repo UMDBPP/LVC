@@ -1355,48 +1355,39 @@ chip</description>
 <wire x1="-0.95" y1="0.675" x2="-1.1" y2="0.675" width="0.127" layer="21"/>
 <wire x1="-1.1" y1="0.675" x2="-1.1" y2="0.525" width="0.127" layer="21"/>
 </package>
-<package name="POWERDI5060-8">
-<rectangle x1="-2.05" y1="0" x2="2.05" y2="3.81" layer="31"/>
-<smd name="S2" x="-0.635" y="-1.455" dx="1.27" dy="0.61" layer="1" rot="R90"/>
-<smd name="S3" x="0.635" y="-1.455" dx="1.27" dy="0.61" layer="1" rot="R90"/>
-<smd name="G" x="1.905" y="-1.455" dx="1.27" dy="0.61" layer="1" rot="R90"/>
-<smd name="S1" x="-1.905" y="-1.455" dx="1.27" dy="0.61" layer="1" rot="R90"/>
-<rectangle x1="-2.805" y1="0.18" x2="-2.05" y2="0.78" layer="31"/>
-<rectangle x1="-2.805" y1="2.605" x2="-2.05" y2="3.205" layer="1"/>
-<rectangle x1="2.05" y1="0.18" x2="2.805" y2="0.78" layer="31"/>
-<rectangle x1="0.33" y1="3.81" x2="0.94" y2="4.52" layer="31"/>
-<rectangle x1="1.6" y1="3.5" x2="2.21" y2="4.52" layer="31"/>
-<rectangle x1="-2.05" y1="0" x2="2.05" y2="3.81" layer="1"/>
-<rectangle x1="2.05" y1="2.605" x2="2.805" y2="3.205" layer="1"/>
-<rectangle x1="-0.94" y1="3.81" x2="-0.33" y2="4.52" layer="1"/>
-<rectangle x1="1.6" y1="3.5" x2="2.21" y2="4.52" layer="1"/>
-<rectangle x1="-2.21" y1="3.5" x2="-1.6" y2="4.52" layer="1"/>
-<rectangle x1="-2.1" y1="-0.05" x2="2.1" y2="3.86" layer="29"/>
-<rectangle x1="-2.805" y1="0.18" x2="-2.05" y2="0.78" layer="1"/>
-<rectangle x1="-2.805" y1="2.605" x2="-2.05" y2="3.205" layer="31"/>
-<rectangle x1="2.05" y1="2.605" x2="2.805" y2="3.205" layer="31"/>
-<rectangle x1="2.05" y1="0.18" x2="2.805" y2="0.78" layer="1"/>
-<rectangle x1="-0.94" y1="3.81" x2="-0.33" y2="4.52" layer="31"/>
-<rectangle x1="0.33" y1="3.81" x2="0.94" y2="4.52" layer="1"/>
-<rectangle x1="-2.21" y1="3.5" x2="-1.6" y2="4.52" layer="31"/>
-<rectangle x1="-2.3" y1="3.4" x2="-1.5" y2="4.6" layer="29"/>
-<rectangle x1="1.5" y1="3.4" x2="2.3" y2="4.6" layer="29"/>
-<rectangle x1="-2.9" y1="2.5" x2="-2" y2="3.3" layer="29"/>
-<rectangle x1="-2.9" y1="0.1" x2="-2" y2="0.9" layer="29"/>
-<rectangle x1="2" y1="2.5" x2="2.9" y2="3.3" layer="29"/>
-<rectangle x1="2" y1="0.1" x2="2.9" y2="0.9" layer="29"/>
-<rectangle x1="-1.05" y1="3.8" x2="-0.2" y2="4.6" layer="29"/>
-<rectangle x1="0.2" y1="3.8" x2="1.05" y2="4.6" layer="29"/>
-<smd name="D1" x="-1.9" y="4.2" dx="0.5" dy="0.5" layer="1" rot="R90" stop="no" cream="no"/>
-<smd name="D2" x="-0.65" y="4.2" dx="0.5" dy="0.5" layer="1" rot="R90" stop="no" cream="no"/>
-<smd name="D3" x="0.65" y="4.2" dx="0.5" dy="0.5" layer="1" rot="R90" stop="no" cream="no"/>
-<smd name="D4" x="1.9" y="4.2" dx="0.5" dy="0.5" layer="1" rot="R90" stop="no" cream="no"/>
-<wire x1="-2.9" y1="4.6" x2="2.9" y2="4.6" width="0.127" layer="51"/>
-<wire x1="2.9" y1="4.6" x2="2.9" y2="-2.2" width="0.127" layer="51"/>
-<wire x1="2.9" y1="-2.2" x2="-2.9" y2="-2.2" width="0.127" layer="51"/>
-<wire x1="-2.9" y1="-2.2" x2="-2.9" y2="4.6" width="0.127" layer="51"/>
-<text x="-2.8" y="4.8" size="1.27" layer="25">&gt;NAME</text>
-<text x="-2.9" y="-3.6" size="1.27" layer="25">&gt;VALUE</text>
+<package name="POWERPAK-SO-8-DUAL">
+<smd name="2" x="-0.635" y="-2.725" dx="1.27" dy="0.61" layer="1" rot="R90"/>
+<smd name="1" x="-1.905" y="-2.725" dx="1.27" dy="0.61" layer="1" rot="R90"/>
+<smd name="3" x="0.635" y="-2.725" dx="1.27" dy="0.61" layer="1" rot="R90"/>
+<smd name="4" x="1.905" y="-2.725" dx="1.27" dy="0.61" layer="1" rot="R90"/>
+<rectangle x1="-1.955" y1="-1.27" x2="-0.305" y2="2.54" layer="1"/>
+<rectangle x1="0.305" y1="-1.27" x2="1.955" y2="2.54" layer="1"/>
+<rectangle x1="-0.915" y1="2.54" x2="-0.305" y2="3.25" layer="1"/>
+<rectangle x1="0.305" y1="2.54" x2="0.915" y2="3.25" layer="1"/>
+<rectangle x1="1.6" y1="2.23" x2="2.21" y2="3.25" layer="1"/>
+<rectangle x1="-2.21" y1="2.23" x2="-1.6" y2="3.25" layer="1"/>
+<rectangle x1="-1.955" y1="-1.27" x2="-0.305" y2="2.54" layer="31"/>
+<rectangle x1="0.305" y1="-1.27" x2="1.955" y2="2.54" layer="31"/>
+<rectangle x1="-0.915" y1="2.54" x2="-0.305" y2="3.25" layer="31"/>
+<rectangle x1="0.305" y1="2.54" x2="0.915" y2="3.25" layer="31"/>
+<rectangle x1="1.6" y1="2.23" x2="2.21" y2="3.25" layer="31"/>
+<rectangle x1="-2.21" y1="2.23" x2="-1.6" y2="3.25" layer="31"/>
+<rectangle x1="-2.3" y1="2.13" x2="-1.5" y2="3.38" layer="29"/>
+<rectangle x1="1.5" y1="2.13" x2="2.3" y2="3.38" layer="29"/>
+<rectangle x1="-1.05" y1="2.53" x2="-0.15" y2="3.38" layer="29"/>
+<rectangle x1="0.15" y1="2.53" x2="1.05" y2="3.38" layer="29"/>
+<rectangle x1="-2.1" y1="-1.42" x2="-0.15" y2="2.68" layer="29"/>
+<rectangle x1="0.15" y1="-1.42" x2="2.1" y2="2.68" layer="29"/>
+<smd name="8" x="-1.9" y="2.88" dx="0.5" dy="0.5" layer="1" rot="R90" stop="no" thermals="no" cream="no"/>
+<smd name="7" x="-0.6" y="2.88" dx="0.5" dy="0.5" layer="1" rot="R90" stop="no" thermals="no" cream="no"/>
+<smd name="6" x="0.6" y="2.93" dx="0.5" dy="0.5" layer="1" rot="R90" stop="no" thermals="no" cream="no"/>
+<smd name="5" x="1.9" y="2.88" dx="0.5" dy="0.5" layer="1" rot="R90" stop="no" thermals="no" cream="no"/>
+<wire x1="-2.54" y1="3.429" x2="2.54" y2="3.429" width="0.127" layer="51"/>
+<wire x1="2.54" y1="3.429" x2="2.54" y2="-3.556" width="0.127" layer="51"/>
+<wire x1="2.54" y1="-3.556" x2="-2.54" y2="-3.556" width="0.127" layer="51"/>
+<wire x1="-2.54" y1="-3.556" x2="-2.54" y2="3.429" width="0.127" layer="51"/>
+<text x="-2.794" y="3.81" size="1.27" layer="25">&gt;NAME</text>
+<text x="-2.794" y="-5.08" size="1.27" layer="27">&gt;VALUE</text>
 </package>
 </packages>
 </library>
@@ -1871,10 +1862,9 @@ Please make sure your boards conform to these design rules.</description>
 <element name="R12" library="resistor" package="R0603" value="1M" x="12.065" y="12.7"/>
 <element name="S2" library="AR_switches" package="CL-SB-12B" value="CL-SB-12B-02" x="8.89" y="9.8425"/>
 <element name="JP1" library="pinhead" package="1X02" value="" x="1.5875" y="10.556875" rot="R270"/>
-<element name="Q4" library="AR_transistor" package="POWERDI5060-8" value="DMP3010LPS" x="-7.62" y="2.54"/>
 <element name="D3" library="NR_diode" package="SOD-323F" value="MM3Z12VC" x="-8.89" y="-5.08"/>
 <element name="R13" library="resistor" package="R0603" value="1M" x="-8.89" y="-10.16"/>
-<element name="Q3" library="AR_transistor" package="POWERDI5060-8" value="DMP3010LPS" x="-15.24" y="-7.62"/>
+<element name="Q3" library="AR_transistor" package="POWERPAK-SO-8-DUAL" value="SI7997DP" x="-24.13" y="-6.35"/>
 </elements>
 <signals>
 <signal name="GND">
@@ -2112,24 +2102,16 @@ Please make sure your boards conform to these design rules.</description>
 <via x="22.5425" y="16.113125" extent="1-16" drill="0.381"/>
 <wire x1="22.5425" y1="16.113125" x2="22.519375" y2="16.13625" width="0.254" layer="1"/>
 <wire x1="22.519375" y1="16.13625" x2="22.519375" y2="16.430625" width="0.254" layer="1"/>
-<contactref element="Q4" pad="S1"/>
-<contactref element="Q4" pad="S2"/>
-<contactref element="Q4" pad="S3"/>
 <contactref element="D3" pad="2"/>
-<contactref element="Q3" pad="S1"/>
-<contactref element="Q3" pad="S2"/>
-<contactref element="Q3" pad="S3"/>
+<contactref element="Q3" pad="3"/>
+<contactref element="Q3" pad="1"/>
 <wire x1="27.94" y1="19.605625" x2="27.94" y2="20.081875" width="0" layer="19" extent="1-1"/>
 <wire x1="23.55125" y1="18.755625" x2="27.94" y2="19.605625" width="0" layer="19" extent="1-1"/>
 <wire x1="20.081875" y1="18.7325" x2="20.558125" y2="16.98625" width="0" layer="19" extent="1-1"/>
 <wire x1="20.240625" y1="22.304375" x2="20.081875" y2="18.7325" width="0" layer="19" extent="1-1"/>
-<wire x1="-6.985" y1="1.085" x2="1.5875" y2="11.826875" width="0" layer="19" extent="1-1"/>
-<wire x1="-8.255" y1="1.085" x2="-6.985" y2="1.085" width="0" layer="19" extent="1-1"/>
-<wire x1="-9.525" y1="1.085" x2="-8.255" y2="1.085" width="0" layer="19" extent="1-1"/>
-<wire x1="-8.165" y1="-5.08" x2="-8.255" y2="1.085" width="0" layer="19" extent="1-1"/>
-<wire x1="-14.605" y1="-9.075" x2="-8.165" y2="-5.08" width="0" layer="19" extent="1-1"/>
-<wire x1="-15.875" y1="-9.075" x2="-14.605" y2="-9.075" width="0" layer="19" extent="1-1"/>
-<wire x1="-17.145" y1="-9.075" x2="-15.875" y2="-9.075" width="0" layer="19" extent="1-1"/>
+<wire x1="-8.165" y1="-5.08" x2="1.5875" y2="11.826875" width="0" layer="19" extent="1-1"/>
+<wire x1="-23.495" y1="-9.075" x2="-8.165" y2="-5.08" width="0" layer="19" extent="1-1"/>
+<wire x1="-26.035" y1="-9.075" x2="-23.495" y2="-9.075" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="VCC">
 <contactref element="U1" pad="7"/>
@@ -2349,9 +2331,9 @@ Please make sure your boards conform to these design rules.</description>
 <wire x1="19.3675" y1="17.78" x2="18.0975" y2="19.05" width="0.2032" layer="1"/>
 <wire x1="18.0975" y1="19.05" x2="18.0975" y2="23.1775" width="0.2032" layer="1"/>
 <wire x1="18.0975" y1="23.1775" x2="18.415" y2="23.495" width="0.2032" layer="1"/>
-<contactref element="Q3" pad="G"/>
+<contactref element="Q3" pad="2"/>
 <wire x1="18.415" y1="23.495" x2="19.225" y2="23.33625" width="0" layer="19" extent="1-1"/>
-<wire x1="-13.335" y1="-9.075" x2="18.0975" y2="19.05" width="0" layer="19" extent="1-1"/>
+<wire x1="-24.765" y1="-9.075" x2="18.0975" y2="19.05" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$7">
 <contactref element="R3" pad="2"/>
@@ -2426,16 +2408,12 @@ Please make sure your boards conform to these design rules.</description>
 </polygon>
 <via x="12.461875" y="18.970625" extent="1-16" drill="0.762"/>
 <via x="12.3825" y="22.38375" extent="1-16" drill="0.762"/>
-<contactref element="Q3" pad="D2"/>
-<contactref element="Q3" pad="D1"/>
-<contactref element="Q3" pad="D3"/>
-<contactref element="Q3" pad="D4"/>
+<contactref element="Q3" pad="7"/>
+<contactref element="Q3" pad="8"/>
 <wire x1="12.461875" y1="18.970625" x2="12.3825" y2="22.38375" width="0" layer="19" extent="1-1"/>
 <wire x1="3.81" y1="19.84" x2="12.461875" y2="18.970625" width="0" layer="19" extent="1-1"/>
-<wire x1="-13.34" y1="-3.42" x2="3.81" y2="19.84" width="0" layer="19" extent="1-1"/>
-<wire x1="-14.59" y1="-3.42" x2="-13.34" y2="-3.42" width="0" layer="19" extent="1-1"/>
-<wire x1="-15.89" y1="-3.42" x2="-14.59" y2="-3.42" width="0" layer="19" extent="1-1"/>
-<wire x1="-17.14" y1="-3.42" x2="-15.89" y2="-3.42" width="0" layer="19" extent="1-1"/>
+<wire x1="-24.73" y1="-3.47" x2="3.81" y2="19.84" width="0" layer="19" extent="1-1"/>
+<wire x1="-26.03" y1="-3.47" x2="-24.73" y2="-3.47" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$4">
 <contactref element="Q1" pad="4"/>
@@ -2539,21 +2517,17 @@ Please make sure your boards conform to these design rules.</description>
 </signal>
 <signal name="VDD">
 <contactref element="J2" pad="1"/>
-<contactref element="Q4" pad="D2"/>
-<contactref element="Q4" pad="D1"/>
-<contactref element="Q4" pad="D3"/>
-<contactref element="Q4" pad="D4"/>
-<wire x1="-5.72" y1="6.74" x2="27.94" y2="19.84" width="0" layer="19" extent="1-1"/>
-<wire x1="-6.97" y1="6.74" x2="-5.72" y2="6.74" width="0" layer="19" extent="1-1"/>
-<wire x1="-8.27" y1="6.74" x2="-6.97" y2="6.74" width="0" layer="19" extent="1-1"/>
-<wire x1="-9.52" y1="6.74" x2="-8.27" y2="6.74" width="0" layer="19" extent="1-1"/>
+<contactref element="Q3" pad="5"/>
+<contactref element="Q3" pad="6"/>
+<wire x1="-22.23" y1="-3.47" x2="27.94" y2="19.84" width="0" layer="19" extent="1-1"/>
+<wire x1="-23.53" y1="-3.42" x2="-22.23" y2="-3.47" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$6">
 <contactref element="D3" pad="1"/>
-<contactref element="Q4" pad="G"/>
 <contactref element="R13" pad="1"/>
+<contactref element="Q3" pad="4"/>
+<wire x1="-9.74" y1="-10.16" x2="-22.225" y2="-9.075" width="0" layer="19" extent="1-1"/>
 <wire x1="-9.615" y1="-5.08" x2="-9.74" y2="-10.16" width="0" layer="19" extent="1-1"/>
-<wire x1="-5.715" y1="1.085" x2="-9.615" y2="-5.08" width="0" layer="19" extent="1-1"/>
 </signal>
 </signals>
 <errors>

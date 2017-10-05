@@ -169,6 +169,40 @@
 <text x="-2.8" y="4.8" size="1.27" layer="25">&gt;NAME</text>
 <text x="-2.9" y="-3.6" size="1.27" layer="25">&gt;VALUE</text>
 </package>
+<package name="POWERPAK-SO-8-DUAL">
+<smd name="2" x="-0.635" y="-2.725" dx="1.27" dy="0.61" layer="1" rot="R90"/>
+<smd name="1" x="-1.905" y="-2.725" dx="1.27" dy="0.61" layer="1" rot="R90"/>
+<smd name="3" x="0.635" y="-2.725" dx="1.27" dy="0.61" layer="1" rot="R90"/>
+<smd name="4" x="1.905" y="-2.725" dx="1.27" dy="0.61" layer="1" rot="R90"/>
+<rectangle x1="-1.955" y1="-1.27" x2="-0.305" y2="2.54" layer="1"/>
+<rectangle x1="0.305" y1="-1.27" x2="1.955" y2="2.54" layer="1"/>
+<rectangle x1="-0.915" y1="2.54" x2="-0.305" y2="3.25" layer="1"/>
+<rectangle x1="0.305" y1="2.54" x2="0.915" y2="3.25" layer="1"/>
+<rectangle x1="1.6" y1="2.23" x2="2.21" y2="3.25" layer="1"/>
+<rectangle x1="-2.21" y1="2.23" x2="-1.6" y2="3.25" layer="1"/>
+<rectangle x1="-1.955" y1="-1.27" x2="-0.305" y2="2.54" layer="31"/>
+<rectangle x1="0.305" y1="-1.27" x2="1.955" y2="2.54" layer="31"/>
+<rectangle x1="-0.915" y1="2.54" x2="-0.305" y2="3.25" layer="31"/>
+<rectangle x1="0.305" y1="2.54" x2="0.915" y2="3.25" layer="31"/>
+<rectangle x1="1.6" y1="2.23" x2="2.21" y2="3.25" layer="31"/>
+<rectangle x1="-2.21" y1="2.23" x2="-1.6" y2="3.25" layer="31"/>
+<rectangle x1="-2.3" y1="2.13" x2="-1.5" y2="3.38" layer="29"/>
+<rectangle x1="1.5" y1="2.13" x2="2.3" y2="3.38" layer="29"/>
+<rectangle x1="-1.05" y1="2.53" x2="-0.15" y2="3.38" layer="29"/>
+<rectangle x1="0.15" y1="2.53" x2="1.05" y2="3.38" layer="29"/>
+<rectangle x1="-2.1" y1="-1.42" x2="-0.15" y2="2.68" layer="29"/>
+<rectangle x1="0.15" y1="-1.42" x2="2.1" y2="2.68" layer="29"/>
+<smd name="8" x="-1.9" y="2.88" dx="0.5" dy="0.5" layer="1" rot="R90" stop="no" thermals="no" cream="no"/>
+<smd name="7" x="-0.6" y="2.88" dx="0.5" dy="0.5" layer="1" rot="R90" stop="no" thermals="no" cream="no"/>
+<smd name="6" x="0.6" y="2.93" dx="0.5" dy="0.5" layer="1" rot="R90" stop="no" thermals="no" cream="no"/>
+<smd name="5" x="1.9" y="2.88" dx="0.5" dy="0.5" layer="1" rot="R90" stop="no" thermals="no" cream="no"/>
+<wire x1="-2.54" y1="3.429" x2="2.54" y2="3.429" width="0.127" layer="51"/>
+<wire x1="2.54" y1="3.429" x2="2.54" y2="-3.556" width="0.127" layer="51"/>
+<wire x1="2.54" y1="-3.556" x2="-2.54" y2="-3.556" width="0.127" layer="51"/>
+<wire x1="-2.54" y1="-3.556" x2="-2.54" y2="3.429" width="0.127" layer="51"/>
+<text x="-2.794" y="3.81" size="1.27" layer="25">&gt;NAME</text>
+<text x="-2.794" y="-5.08" size="1.27" layer="27">&gt;VALUE</text>
+</package>
 </packages>
 <symbols>
 <symbol name="N-CHANNEL-MOSFET">
@@ -320,6 +354,27 @@
 <connect gate="G$1" pin="D" pad="D1 D2 D3 D4"/>
 <connect gate="G$1" pin="G" pad="G"/>
 <connect gate="G$1" pin="S" pad="S1 S2 S3"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="SI7997DP">
+<gates>
+<gate name="B" symbol="P-CHANNEL-MOSFET" x="0" y="-17.78"/>
+<gate name="A" symbol="P-CHANNEL-MOSFET" x="0" y="12.7"/>
+</gates>
+<devices>
+<device name="" package="POWERPAK-SO-8-DUAL">
+<connects>
+<connect gate="A" pin="D" pad="5 6"/>
+<connect gate="A" pin="G" pad="4"/>
+<connect gate="A" pin="S" pad="3"/>
+<connect gate="B" pin="D" pad="7 8"/>
+<connect gate="B" pin="G" pad="2"/>
+<connect gate="B" pin="S" pad="1"/>
 </connects>
 <technologies>
 <technology name=""/>
