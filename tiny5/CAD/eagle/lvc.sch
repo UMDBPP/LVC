@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="7.6.0">
+<eagle version="6.5.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -5638,34 +5638,18 @@ type 0309, grid 2.5 mm</description>
 <smd name="1" x="-1.905" y="-2.725" dx="1.27" dy="0.61" layer="1" rot="R90"/>
 <smd name="3" x="0.635" y="-2.725" dx="1.27" dy="0.61" layer="1" rot="R90"/>
 <smd name="4" x="1.905" y="-2.725" dx="1.27" dy="0.61" layer="1" rot="R90"/>
-<rectangle x1="-1.955" y1="-1.27" x2="-0.305" y2="2.54" layer="1"/>
-<rectangle x1="0.305" y1="-1.27" x2="1.955" y2="2.54" layer="1"/>
-<rectangle x1="-0.915" y1="2.54" x2="-0.305" y2="3.25" layer="1"/>
-<rectangle x1="0.305" y1="2.54" x2="0.915" y2="3.25" layer="1"/>
-<rectangle x1="1.6" y1="2.23" x2="2.21" y2="3.25" layer="1"/>
-<rectangle x1="-2.21" y1="2.23" x2="-1.6" y2="3.25" layer="1"/>
-<rectangle x1="-1.955" y1="-1.27" x2="-0.305" y2="2.54" layer="31"/>
-<rectangle x1="0.305" y1="-1.27" x2="1.955" y2="2.54" layer="31"/>
-<rectangle x1="-0.915" y1="2.54" x2="-0.305" y2="3.25" layer="31"/>
-<rectangle x1="0.305" y1="2.54" x2="0.915" y2="3.25" layer="31"/>
-<rectangle x1="1.6" y1="2.23" x2="2.21" y2="3.25" layer="31"/>
-<rectangle x1="-2.21" y1="2.23" x2="-1.6" y2="3.25" layer="31"/>
-<rectangle x1="-2.3" y1="2.13" x2="-1.5" y2="3.38" layer="29"/>
-<rectangle x1="1.5" y1="2.13" x2="2.3" y2="3.38" layer="29"/>
-<rectangle x1="-1.05" y1="2.53" x2="-0.15" y2="3.38" layer="29"/>
-<rectangle x1="0.15" y1="2.53" x2="1.05" y2="3.38" layer="29"/>
-<rectangle x1="-2.1" y1="-1.42" x2="-0.15" y2="2.68" layer="29"/>
-<rectangle x1="0.15" y1="-1.42" x2="2.1" y2="2.68" layer="29"/>
-<smd name="8" x="-1.9" y="2.88" dx="0.5" dy="0.5" layer="1" rot="R90" stop="no" thermals="no" cream="no"/>
-<smd name="7" x="-0.6" y="2.88" dx="0.5" dy="0.5" layer="1" rot="R90" stop="no" thermals="no" cream="no"/>
-<smd name="6" x="0.6" y="2.93" dx="0.5" dy="0.5" layer="1" rot="R90" stop="no" thermals="no" cream="no"/>
-<smd name="5" x="1.9" y="2.88" dx="0.5" dy="0.5" layer="1" rot="R90" stop="no" thermals="no" cream="no"/>
+<smd name="8" x="-1.905" y="2.74" dx="0.61" dy="1.02" layer="1" rot="R180" thermals="no"/>
+<smd name="7" x="-0.61" y="2.895" dx="0.61" dy="0.71" layer="1" rot="R180" thermals="no"/>
+<smd name="6" x="0.61" y="2.895" dx="0.71" dy="0.61" layer="1" rot="R90" thermals="no"/>
+<smd name="5" x="1.905" y="2.74" dx="1.02" dy="0.61" layer="1" rot="R90" thermals="no"/>
 <wire x1="-2.54" y1="3.429" x2="2.54" y2="3.429" width="0.127" layer="51"/>
 <wire x1="2.54" y1="3.429" x2="2.54" y2="-3.556" width="0.127" layer="51"/>
 <wire x1="2.54" y1="-3.556" x2="-2.54" y2="-3.556" width="0.127" layer="51"/>
 <wire x1="-2.54" y1="-3.556" x2="-2.54" y2="3.429" width="0.127" layer="51"/>
 <text x="-2.794" y="3.81" size="1.27" layer="25">&gt;NAME</text>
 <text x="-2.794" y="-5.08" size="1.27" layer="27">&gt;VALUE</text>
+<smd name="8L" x="-1.13" y="0.635" dx="1.65" dy="3.81" layer="1"/>
+<smd name="5L" x="1.13" y="0.635" dx="1.65" dy="3.81" layer="1"/>
 </package>
 </packages>
 <symbols>
@@ -5799,10 +5783,10 @@ type 0309, grid 2.5 mm</description>
 <devices>
 <device name="" package="POWERPAK-SO-8-DUAL">
 <connects>
-<connect gate="A" pin="D" pad="5 6"/>
+<connect gate="A" pin="D" pad="5 5L 6"/>
 <connect gate="A" pin="G" pad="4"/>
 <connect gate="A" pin="S" pad="3"/>
-<connect gate="B" pin="D" pad="7 8"/>
+<connect gate="B" pin="D" pad="7 8 8L"/>
 <connect gate="B" pin="G" pad="2"/>
 <connect gate="B" pin="S" pad="1"/>
 </connects>
@@ -6753,11 +6737,11 @@ Protection</text>
 <attribute name="VALUE" x="250.19" y="77.978" size="1.778" layer="96"/>
 </instance>
 <instance part="GND19" gate="1" x="259.08" y="71.12"/>
-<instance part="Q3" gate="B" x="101.6" y="101.6" smashed="yes" rot="MR270">
-<attribute name="NAME" x="99.06" y="106.68" size="2.54" layer="95"/>
+<instance part="Q3" gate="B" x="238.76" y="86.36" smashed="yes">
+<attribute name="NAME" x="233.68" y="88.9" size="2.54" layer="95" rot="MR270"/>
 </instance>
-<instance part="Q3" gate="A" x="238.76" y="86.36" smashed="yes">
-<attribute name="NAME" x="236.22" y="83.82" size="2.54" layer="95" rot="MR0"/>
+<instance part="Q3" gate="A" x="101.6" y="101.6" smashed="yes" rot="MR270">
+<attribute name="NAME" x="104.14" y="104.14" size="2.54" layer="95" rot="R90"/>
 </instance>
 </instances>
 <busses>
@@ -6881,7 +6865,6 @@ Protection</text>
 </segment>
 <segment>
 <pinref part="P+4" gate="1" pin="V+"/>
-<wire x1="93.98" y1="101.6" x2="83.82" y2="101.6" width="0.1524" layer="91"/>
 <wire x1="83.82" y1="101.6" x2="76.2" y2="101.6" width="0.1524" layer="91"/>
 <wire x1="76.2" y1="101.6" x2="76.2" y2="104.14" width="0.1524" layer="91"/>
 <pinref part="R2" gate="G$1" pin="1"/>
@@ -6889,8 +6872,9 @@ Protection</text>
 <junction x="76.2" y="101.6"/>
 <pinref part="D2" gate="G$1" pin="C"/>
 <wire x1="83.82" y1="99.06" x2="83.82" y2="101.6" width="0.1524" layer="91"/>
+<pinref part="Q3" gate="A" pin="S"/>
+<wire x1="93.98" y1="101.6" x2="83.82" y2="101.6" width="0.1524" layer="91"/>
 <junction x="83.82" y="101.6"/>
-<pinref part="Q3" gate="B" pin="S"/>
 </segment>
 <segment>
 <pinref part="R7" gate="G$1" pin="1"/>
@@ -6920,11 +6904,11 @@ Protection</text>
 <junction x="154.94" y="101.6"/>
 </segment>
 <segment>
-<pinref part="P+13" gate="1" pin="V+"/>
-<wire x1="228.6" y1="93.98" x2="238.76" y2="93.98" width="0.1524" layer="91"/>
 <pinref part="D3" gate="G$1" pin="C"/>
-<pinref part="Q3" gate="A" pin="S"/>
-<wire x1="238.76" y1="93.98" x2="241.3" y2="93.98" width="0.1524" layer="91"/>
+<pinref part="Q3" gate="B" pin="S"/>
+<wire x1="241.3" y1="93.98" x2="238.76" y2="93.98" width="0.1524" layer="91"/>
+<pinref part="P+13" gate="1" pin="V+"/>
+<wire x1="238.76" y1="93.98" x2="228.6" y2="93.98" width="0.1524" layer="91"/>
 <junction x="238.76" y="93.98"/>
 </segment>
 </net>
@@ -7072,14 +7056,14 @@ Protection</text>
 <wire x1="76.2" y1="88.9" x2="76.2" y2="86.36" width="0.1524" layer="91"/>
 <wire x1="76.2" y1="86.36" x2="83.82" y2="86.36" width="0.1524" layer="91"/>
 <wire x1="83.82" y1="86.36" x2="104.14" y2="86.36" width="0.1524" layer="91"/>
-<wire x1="104.14" y1="86.36" x2="104.14" y2="96.52" width="0.1524" layer="91"/>
 <pinref part="D2" gate="G$1" pin="A"/>
 <wire x1="83.82" y1="91.44" x2="83.82" y2="86.36" width="0.1524" layer="91"/>
 <junction x="83.82" y="86.36"/>
 <pinref part="R3" gate="G$1" pin="1"/>
 <wire x1="76.2" y1="83.82" x2="76.2" y2="86.36" width="0.1524" layer="91"/>
 <junction x="76.2" y="86.36"/>
-<pinref part="Q3" gate="B" pin="G"/>
+<pinref part="Q3" gate="A" pin="G"/>
+<wire x1="104.14" y1="96.52" x2="104.14" y2="86.36" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$7" class="0">
@@ -7091,9 +7075,9 @@ Protection</text>
 </net>
 <net name="OUT" class="0">
 <segment>
-<wire x1="109.22" y1="101.6" x2="111.76" y2="101.6" width="0.1524" layer="91"/>
 <label x="111.76" y="101.6" size="1.016" layer="95" xref="yes"/>
-<pinref part="Q3" gate="B" pin="D"/>
+<pinref part="Q3" gate="A" pin="D"/>
+<wire x1="111.76" y1="101.6" x2="109.22" y2="101.6" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <wire x1="228.6" y1="182.88" x2="228.6" y2="187.96" width="0.1524" layer="91"/>
@@ -7212,18 +7196,18 @@ Protection</text>
 </segment>
 <segment>
 <pinref part="VDD2" gate="G$1" pin="VDD"/>
+<pinref part="Q3" gate="B" pin="D"/>
 <wire x1="238.76" y1="73.66" x2="238.76" y2="78.74" width="0.1524" layer="91"/>
-<pinref part="Q3" gate="A" pin="D"/>
 </segment>
 </net>
 <net name="N$6" class="0">
 <segment>
 <pinref part="D3" gate="G$1" pin="A"/>
 <wire x1="248.92" y1="93.98" x2="248.92" y2="83.82" width="0.1524" layer="91"/>
-<wire x1="248.92" y1="83.82" x2="243.84" y2="83.82" width="0.1524" layer="91"/>
 <pinref part="R13" gate="G$1" pin="1"/>
+<pinref part="Q3" gate="B" pin="G"/>
+<wire x1="243.84" y1="83.82" x2="248.92" y2="83.82" width="0.1524" layer="91"/>
 <junction x="248.92" y="83.82"/>
-<pinref part="Q3" gate="A" pin="G"/>
 </segment>
 </net>
 </nets>
