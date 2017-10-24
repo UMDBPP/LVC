@@ -3,7 +3,7 @@
 #include <avr/pgmspace.h>
 #include <stdint.h>
 
-/* Aravind Ramakrishnan - 12 July 2017 */
+/* Aravind Ramakrishnan - 24 October 2017 */
 
 /* The purpose of this program (meant for ATTiny5 mcu) is to prevent permanent
 damage of LiPo batteries due to deep discharge where the battery is depleted
@@ -146,7 +146,7 @@ int main() {
 
 ISR(WDT_vect) {
     sec_frac++;
-    TCCR0A &= (1 << COM0A1);
+    TCCR0A &= ~(1 << COM0A1); /* remove LED pin from output compare */
     PORTB &= ~(1 << LED_OUT);
     if (sec_frac == 0x4) {
         sec++;
