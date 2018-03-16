@@ -11611,12 +11611,12 @@ Source: www.kingbright.com</description>
 <part name="GND9" library="supply1" deviceset="GND" device=""/>
 <part name="GND10" library="supply1" deviceset="GND" device=""/>
 <part name="S1" library="NR_switch" deviceset="CL-SB-13B-02" device=""/>
-<part name="R7" library="resistor" deviceset="R-US_" device="R0603" value="1.5M"/>
-<part name="R8" library="resistor" deviceset="R-US_" device="R0603" value="510k"/>
+<part name="R7" library="resistor" deviceset="R-US_" device="R0603" value="1M"/>
+<part name="R8" library="resistor" deviceset="R-US_" device="R0603" value="1M"/>
 <part name="R9" library="resistor" deviceset="R-US_" device="R0603" value="1.5M"/>
-<part name="R10" library="resistor" deviceset="R-US_" device="R0603" value="301k"/>
+<part name="R10" library="resistor" deviceset="R-US_" device="R0603" value="1M"/>
 <part name="VR1" library="NR_pot" deviceset="BOURNS_3214W" device=""/>
-<part name="R11" library="resistor" deviceset="R-US_" device="R0603" value="10k"/>
+<part name="R11" library="resistor" deviceset="R-US_" device="R0603" value="100k"/>
 <part name="GND12" library="supply1" deviceset="GND" device=""/>
 <part name="GND13" library="supply1" deviceset="GND" device=""/>
 <part name="GND14" library="supply1" deviceset="GND" device=""/>
@@ -11684,6 +11684,7 @@ Source: www.kingbright.com</description>
 <wire x1="170.18" y1="5.08" x2="170.18" y2="40.64" width="0.1524" layer="97" style="shortdash"/>
 <text x="226.06" y="119.38" size="3.81" layer="97">Reverse Polarity
 Protection</text>
+<text x="78.74" y="58.42" size="1.778" layer="97">Should be RK7002BMT116</text>
 </plain>
 <instances>
 <instance part="P+4" gate="1" x="76.2" y="106.68" smashed="yes">
