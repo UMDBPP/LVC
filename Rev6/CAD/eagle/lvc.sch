@@ -4570,61 +4570,6 @@ Source: http://www.murata.com .. GRM43DR72E224KW01.pdf</description>
 </deviceset>
 </devicesets>
 </library>
-<library name="NR_diode">
-<packages>
-<package name="SOD-323F">
-<smd name="1" x="-0.725" y="0" dx="0.8" dy="0.8" layer="1"/>
-<smd name="2" x="0.725" y="0" dx="0.8" dy="0.8" layer="1"/>
-<wire x1="0.9" y1="0.7" x2="0.9" y2="-0.7" width="0.1" layer="51"/>
-<wire x1="0.9" y1="-0.7" x2="-0.9" y2="-0.7" width="0.1" layer="51"/>
-<wire x1="-0.9" y1="-0.7" x2="-0.9" y2="0.7" width="0.1" layer="51"/>
-<wire x1="-0.9" y1="0.7" x2="0.9" y2="0.7" width="0.1" layer="51"/>
-<wire x1="-0.2" y1="0.3" x2="-0.2" y2="-0.3" width="0.1" layer="21"/>
-<wire x1="-0.2" y1="-0.3" x2="0.2" y2="0" width="0.1" layer="21"/>
-<wire x1="0.2" y1="0" x2="-0.2" y2="0.3" width="0.1" layer="21"/>
-<wire x1="0.2" y1="0.3" x2="0.2" y2="-0.3" width="0.1" layer="21"/>
-<wire x1="-0.9" y1="0.7" x2="0.9" y2="0.7" width="0.1" layer="21"/>
-<wire x1="-0.9" y1="-0.7" x2="0.9" y2="-0.7" width="0.1" layer="21"/>
-<text x="-0.9" y="0.9" size="0.8128" layer="25">&gt;NAME</text>
-<text x="-0.9" y="-1.4" size="0.6096" layer="27">&gt;VALUE</text>
-</package>
-</packages>
-<symbols>
-<symbol name="ZDIODE">
-<pin name="A" x="-5.08" y="0" visible="off" length="short"/>
-<pin name="C" x="2.54" y="0" visible="off" length="short" rot="R180"/>
-<text x="-5.08" y="2.54" size="1.27" layer="95">&gt;NAME</text>
-<text x="-5.08" y="-5.08" size="1.27" layer="96">&gt;VALUE</text>
-<polygon width="0.1524" layer="94">
-<vertex x="-2.032" y="1.27"/>
-<vertex x="-2.032" y="-1.27"/>
-<vertex x="0" y="0"/>
-</polygon>
-<wire x1="0" y1="1.016" x2="-0.508" y2="1.524" width="0.1524" layer="94"/>
-<wire x1="0" y1="1.016" x2="0" y2="-1.016" width="0.1524" layer="94"/>
-<wire x1="0" y1="-1.016" x2="0.508" y2="-1.524" width="0.1524" layer="94"/>
-<wire x1="-2.54" y1="0" x2="-2.032" y2="0" width="0.1524" layer="94"/>
-</symbol>
-</symbols>
-<devicesets>
-<deviceset name="MM3Z12VC" prefix="D">
-<gates>
-<gate name="G$1" symbol="ZDIODE" x="0" y="0"/>
-</gates>
-<devices>
-<device name="" package="SOD-323F">
-<connects>
-<connect gate="G$1" pin="A" pad="1"/>
-<connect gate="G$1" pin="C" pad="2"/>
-</connects>
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-</devices>
-</deviceset>
-</devicesets>
-</library>
 <library name="NR_conn">
 <packages>
 <package name="3.5MM_1X2">
@@ -4883,6 +4828,9 @@ Source: http://www.murata.com .. GRM43DR72E224KW01.pdf</description>
 <package name="TP_2.5MM">
 <smd name="P$1" x="0" y="0" dx="2.5" dy="2.5" layer="1"/>
 </package>
+<package name="TP_2.5MM_NOCREAM">
+<smd name="P$1" x="0" y="0" dx="2.5" dy="2.5" layer="1" cream="no"/>
+</package>
 </packages>
 <symbols>
 <symbol name="TESTPOINT">
@@ -4897,6 +4845,14 @@ Source: http://www.murata.com .. GRM43DR72E224KW01.pdf</description>
 </gates>
 <devices>
 <device name="" package="TP_2.5MM">
+<connects>
+<connect gate="G$1" pin="P$1" pad="P$1"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="NOCREAM" package="TP_2.5MM_NOCREAM">
 <connects>
 <connect gate="G$1" pin="P$1" pad="P$1"/>
 </connects>
@@ -15170,6 +15126,79 @@ Source: http://focus.ti.com/lit/ds/symlink/tps77001.pdf</description>
 </deviceset>
 </devicesets>
 </library>
+<library name="LR_zener">
+<packages>
+<package name="SMINI2-F5-B">
+<smd name="A" x="-1.2" y="0" dx="0.9" dy="0.9" layer="1"/>
+<smd name="C" x="1.2" y="0" dx="0.9" dy="1.1" layer="1"/>
+<wire x1="-0.9144" y1="-0.2032" x2="-0.9144" y2="0.2032" width="0.1524" layer="51"/>
+<wire x1="-0.9144" y1="0.2032" x2="-1.3462" y2="0.2032" width="0.1524" layer="51"/>
+<wire x1="-1.3462" y1="0.2032" x2="-1.3462" y2="-0.2032" width="0.1524" layer="51"/>
+<wire x1="-1.3462" y1="-0.2032" x2="-0.9144" y2="-0.2032" width="0.1524" layer="51"/>
+<wire x1="0.889" y1="0.2794" x2="0.9144" y2="-0.2794" width="0.1524" layer="51"/>
+<wire x1="0.9144" y1="-0.2794" x2="1.3462" y2="-0.2794" width="0.1524" layer="51"/>
+<wire x1="1.3462" y1="-0.2794" x2="1.3462" y2="0.2794" width="0.1524" layer="51"/>
+<wire x1="1.3462" y1="0.2794" x2="0.889" y2="0.2794" width="0.1524" layer="51"/>
+<wire x1="-0.9144" y1="-0.6604" x2="0.9144" y2="-0.6604" width="0.1524" layer="51"/>
+<wire x1="0.9144" y1="-0.6604" x2="0.9144" y2="0.6604" width="0.1524" layer="51"/>
+<wire x1="0.9144" y1="0.6604" x2="-0.9144" y2="0.6604" width="0.1524" layer="51"/>
+<wire x1="-0.9144" y1="0.6604" x2="-0.9144" y2="-0.6604" width="0.1524" layer="51"/>
+<wire x1="-1.016" y1="-0.8128" x2="1.016" y2="-0.8128" width="0.1524" layer="21"/>
+<wire x1="1.016" y1="-0.8128" x2="1.016" y2="-0.6096" width="0.1524" layer="21"/>
+<wire x1="1.016" y1="0.8128" x2="-1.016" y2="0.8128" width="0.1524" layer="21"/>
+<wire x1="-1.016" y1="0.8128" x2="-1.016" y2="0.5334" width="0.1524" layer="21"/>
+<wire x1="-1.016" y1="-0.5334" x2="-1.016" y2="-0.8128" width="0.1524" layer="21"/>
+<wire x1="1.016" y1="0.6096" x2="1.016" y2="0.8128" width="0.1524" layer="21"/>
+<text x="-3.2766" y="-0.635" size="1.27" layer="25" ratio="6" rot="SR0">&gt;Name</text>
+<wire x1="-0.254" y1="0" x2="0" y2="0" width="0.1016" layer="21"/>
+<wire x1="0" y1="0" x2="0" y2="0.254" width="0.1016" layer="21"/>
+<wire x1="0" y1="0.254" x2="0.254" y2="0" width="0.1016" layer="21"/>
+<wire x1="0.254" y1="0" x2="0" y2="-0.254" width="0.1016" layer="21"/>
+<wire x1="0" y1="-0.254" x2="0" y2="0" width="0.1016" layer="21"/>
+<wire x1="0.254" y1="0.254" x2="0.254" y2="0" width="0.1016" layer="21"/>
+<wire x1="0.254" y1="-0.254" x2="0.254" y2="0" width="0.1016" layer="21"/>
+<wire x1="0.254" y1="0" x2="0.508" y2="0" width="0.1016" layer="21"/>
+</package>
+</packages>
+<symbols>
+<symbol name="ZDIODE">
+<pin name="A" x="-5.08" y="0" visible="off" length="short" direction="pas"/>
+<pin name="C" x="2.54" y="0" visible="off" length="short" direction="pas" rot="R180"/>
+<text x="-5.08" y="2.54" size="1.27" layer="95">&gt;NAME</text>
+<text x="-5.08" y="-3.302" size="1.27" layer="96">&gt;VALUE</text>
+<polygon width="0.1524" layer="94">
+<vertex x="-2.032" y="1.27"/>
+<vertex x="-2.032" y="-1.27"/>
+<vertex x="0" y="0"/>
+</polygon>
+<wire x1="0" y1="1.016" x2="-0.508" y2="1.524" width="0.1524" layer="94"/>
+<wire x1="0" y1="1.016" x2="0" y2="-1.016" width="0.1524" layer="94"/>
+<wire x1="0" y1="-1.016" x2="0.508" y2="-1.524" width="0.1524" layer="94"/>
+<wire x1="-2.54" y1="0" x2="-2.032" y2="0" width="0.1524" layer="94"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="DZ2J120M0L" prefix="D">
+<gates>
+<gate name="A" symbol="ZDIODE" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="SMINI2-F5-B">
+<connects>
+<connect gate="A" pin="A" pad="A"/>
+<connect gate="A" pin="C" pad="C"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="MANUFACTURER_PART_NUMBER" value="DZ2J120M0L" constant="no"/>
+<attribute name="VENDOR" value="Panasonic" constant="no"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
 </libraries>
 <attributes>
 <attribute name="DOC_NUM" value="1"/>
@@ -15185,7 +15214,6 @@ Source: http://focus.ti.com/lit/ds/symlink/tps77001.pdf</description>
 <part name="P+4" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="V+" device=""/>
 <part name="GND3" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="R2" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-US_" device="R0603" package3d_urn="urn:adsk.eagle:package:26057/1" value="100k"/>
-<part name="D2" library="NR_diode" deviceset="MM3Z12VC" device=""/>
 <part name="R3" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-US_" device="R0603" package3d_urn="urn:adsk.eagle:package:26057/1" value="3k"/>
 <part name="GND7" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="GND8" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
@@ -15205,14 +15233,12 @@ Source: http://focus.ti.com/lit/ds/symlink/tps77001.pdf</description>
 <part name="GND13" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="GND14" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="FRAME1" library="frames" library_urn="urn:adsk.eagle:library:229" deviceset="FRAME_A_L" device=""/>
-<part name="TP1" library="CM_test" deviceset="TESTPOINT" device=""/>
 <part name="P+12" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="V+" device=""/>
 <part name="S2" library="AR_switches" deviceset="CL-SB-12B-02" device=""/>
 <part name="JP1" library="pinhead" library_urn="urn:adsk.eagle:library:325" deviceset="PINHD-1X2" device="" package3d_urn="urn:adsk.eagle:package:22435/2"/>
 <part name="P+13" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="V+" device=""/>
 <part name="VDD1" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="VDD" device=""/>
 <part name="VDD2" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="VDD" device=""/>
-<part name="D3" library="NR_diode" deviceset="MM3Z12VC" device=""/>
 <part name="R10" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-US_" device="R0603" package3d_urn="urn:adsk.eagle:package:26057/1" value="1M"/>
 <part name="GND19" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="Q1" library="AR_transistor" deviceset="SI7997DP" device=""/>
@@ -15234,8 +15260,11 @@ Source: http://focus.ti.com/lit/ds/symlink/tps77001.pdf</description>
 <part name="C4" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-US" device="C0603" package3d_urn="urn:adsk.eagle:package:23616/2" value="0.1uF"/>
 <part name="R11" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0603" package3d_urn="urn:adsk.eagle:package:23555/2" value="100k"/>
 <part name="GND6" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
-<part name="C3" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-US" device="C0603" package3d_urn="urn:adsk.eagle:package:23616/2" value="50pF"/>
+<part name="C3" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-US" device="C0603" package3d_urn="urn:adsk.eagle:package:23616/2" value="47pF"/>
 <part name="GND15" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
+<part name="TP2" library="CM_test" deviceset="TESTPOINT" device="NOCREAM"/>
+<part name="D2" library="LR_zener" deviceset="DZ2J120M0L" device=""/>
+<part name="D3" library="LR_zener" deviceset="DZ2J120M0L" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -15295,7 +15324,6 @@ All capacitors +/- 10% tolerance</text>
 <attribute name="NAME" x="44.45" y="85.3186" size="1.778" layer="95"/>
 <attribute name="VALUE" x="46.99" y="84.582" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="D2" gate="G$1" x="55.88" y="88.9" rot="R90"/>
 <instance part="R3" gate="G$1" x="48.26" y="71.12" smashed="yes" rot="R270">
 <attribute name="NAME" x="46.99" y="72.1614" size="1.778" layer="95" rot="R180"/>
 <attribute name="VALUE" x="46.99" y="69.342" size="1.778" layer="96" rot="R180"/>
@@ -15346,7 +15374,6 @@ All capacitors +/- 10% tolerance</text>
 <instance part="GND14" gate="1" x="200.66" y="142.24"/>
 <instance part="FRAME1" gate="G$1" x="0" y="0"/>
 <instance part="FRAME1" gate="G$2" x="172.72" y="0"/>
-<instance part="TP1" gate="G$1" x="160.02" y="172.72"/>
 <instance part="P+12" gate="1" x="213.36" y="114.3" smashed="yes">
 <attribute name="VALUE" x="215.9" y="116.84" size="1.778" layer="96" rot="R180"/>
 </instance>
@@ -15359,7 +15386,6 @@ All capacitors +/- 10% tolerance</text>
 <instance part="VDD2" gate="G$1" x="238.76" y="71.12" smashed="yes" rot="R180">
 <attribute name="VALUE" x="241.3" y="68.58" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="D3" gate="G$1" x="243.84" y="93.98" rot="R180"/>
 <instance part="R10" gate="G$1" x="254" y="83.82" smashed="yes">
 <attribute name="NAME" x="250.19" y="80.2386" size="1.778" layer="95"/>
 <attribute name="VALUE" x="250.19" y="77.978" size="1.778" layer="96"/>
@@ -15396,6 +15422,9 @@ All capacitors +/- 10% tolerance</text>
 <instance part="GND6" gate="1" x="147.32" y="76.2"/>
 <instance part="C3" gate="G$1" x="147.32" y="86.36"/>
 <instance part="GND15" gate="1" x="114.3" y="55.88"/>
+<instance part="TP2" gate="G$1" x="160.02" y="172.72"/>
+<instance part="D2" gate="A" x="55.88" y="88.9" rot="R90"/>
+<instance part="D3" gate="A" x="243.84" y="93.98" rot="R180"/>
 </instances>
 <busses>
 </busses>
@@ -15503,11 +15532,11 @@ All capacitors +/- 10% tolerance</text>
 <pinref part="R2" gate="G$1" pin="1"/>
 <wire x1="48.26" y1="91.44" x2="48.26" y2="93.98" width="0.1524" layer="91"/>
 <junction x="48.26" y="93.98"/>
-<pinref part="D2" gate="G$1" pin="C"/>
 <wire x1="55.88" y1="91.44" x2="55.88" y2="93.98" width="0.1524" layer="91"/>
 <pinref part="Q1" gate="A" pin="S"/>
 <wire x1="66.04" y1="93.98" x2="55.88" y2="93.98" width="0.1524" layer="91"/>
 <junction x="55.88" y="93.98"/>
+<pinref part="D2" gate="A" pin="C"/>
 </segment>
 <segment>
 <pinref part="P+12" gate="1" pin="V+"/>
@@ -15522,12 +15551,12 @@ All capacitors +/- 10% tolerance</text>
 <junction x="210.82" y="109.22"/>
 </segment>
 <segment>
-<pinref part="D3" gate="G$1" pin="C"/>
 <pinref part="Q1" gate="B" pin="S"/>
 <wire x1="241.3" y1="93.98" x2="238.76" y2="93.98" width="0.1524" layer="91"/>
 <pinref part="P+13" gate="1" pin="V+"/>
 <wire x1="238.76" y1="93.98" x2="228.6" y2="93.98" width="0.1524" layer="91"/>
 <junction x="238.76" y="93.98"/>
+<pinref part="D3" gate="A" pin="C"/>
 </segment>
 <segment>
 <pinref part="U2" gate="G$1" pin="V+"/>
@@ -15562,7 +15591,6 @@ All capacitors +/- 10% tolerance</text>
 <wire x1="48.26" y1="81.28" x2="48.26" y2="78.74" width="0.1524" layer="91"/>
 <wire x1="48.26" y1="78.74" x2="55.88" y2="78.74" width="0.1524" layer="91"/>
 <wire x1="55.88" y1="78.74" x2="76.2" y2="78.74" width="0.1524" layer="91"/>
-<pinref part="D2" gate="G$1" pin="A"/>
 <wire x1="55.88" y1="83.82" x2="55.88" y2="78.74" width="0.1524" layer="91"/>
 <junction x="55.88" y="78.74"/>
 <pinref part="R3" gate="G$1" pin="1"/>
@@ -15570,6 +15598,7 @@ All capacitors +/- 10% tolerance</text>
 <junction x="48.26" y="78.74"/>
 <pinref part="Q1" gate="A" pin="G"/>
 <wire x1="76.2" y1="88.9" x2="76.2" y2="78.74" width="0.1524" layer="91"/>
+<pinref part="D2" gate="A" pin="A"/>
 </segment>
 </net>
 <net name="N$7" class="0">
@@ -15634,12 +15663,12 @@ All capacitors +/- 10% tolerance</text>
 <pinref part="S1" gate="G$1" pin="COM"/>
 <wire x1="162.56" y1="170.18" x2="160.02" y2="170.18" width="0.1524" layer="91"/>
 <label x="157.48" y="170.18" size="1.778" layer="95" rot="R180" xref="yes"/>
-<pinref part="TP1" gate="G$1" pin="P$1"/>
 <wire x1="160.02" y1="170.18" x2="157.48" y2="170.18" width="0.1524" layer="91"/>
 <wire x1="160.02" y1="172.72" x2="160.02" y2="170.18" width="0.1524" layer="91"/>
 <junction x="160.02" y="170.18"/>
 <pinref part="D1" gate="G$1" pin="C"/>
 <wire x1="160.02" y1="167.64" x2="160.02" y2="170.18" width="0.1524" layer="91"/>
+<pinref part="TP2" gate="G$1" pin="P$1"/>
 </segment>
 <segment>
 <pinref part="U2" gate="G$1" pin="+IN"/>
@@ -15688,12 +15717,12 @@ All capacitors +/- 10% tolerance</text>
 </net>
 <net name="N$6" class="0">
 <segment>
-<pinref part="D3" gate="G$1" pin="A"/>
 <wire x1="248.92" y1="93.98" x2="248.92" y2="83.82" width="0.1524" layer="91"/>
 <pinref part="R10" gate="G$1" pin="1"/>
 <pinref part="Q1" gate="B" pin="G"/>
 <wire x1="243.84" y1="83.82" x2="248.92" y2="83.82" width="0.1524" layer="91"/>
 <junction x="248.92" y="83.82"/>
+<pinref part="D3" gate="A" pin="A"/>
 </segment>
 </net>
 <net name="N$8" class="0">
