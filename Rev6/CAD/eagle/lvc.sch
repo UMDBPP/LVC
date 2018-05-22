@@ -15242,9 +15242,9 @@ Source: http://focus.ti.com/lit/ds/symlink/tps77001.pdf</description>
 <part name="R10" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-US_" device="R0603" package3d_urn="urn:adsk.eagle:package:26057/1" value="1M"/>
 <part name="GND19" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="Q1" library="AR_transistor" deviceset="SI7997DP" device=""/>
-<part name="U$1" library="onsemi" deviceset="NCP300LSN33T1G" device=""/>
+<part name="U1" library="onsemi" deviceset="NCP300LSN33T1G" device=""/>
 <part name="GND1" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
-<part name="U$3" library="rohm1" deviceset="RR7002BMT116" device=""/>
+<part name="Q2" library="rohm1" deviceset="RR7002BMT116" device=""/>
 <part name="C2" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-US" device="C0603" package3d_urn="urn:adsk.eagle:package:23616/2" value="0.1uF"/>
 <part name="C1" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-US" device="C0603" package3d_urn="urn:adsk.eagle:package:23616/2" value="0.33uF"/>
 <part name="LED1" library="led" library_urn="urn:adsk.eagle:library:259" deviceset="LED" device="CHIPLED_0603" package3d_urn="urn:adsk.eagle:package:15822/2"/>
@@ -15252,8 +15252,8 @@ Source: http://focus.ti.com/lit/ds/symlink/tps77001.pdf</description>
 <part name="GND2" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="D1" library="vishay1" deviceset="BZT52B8V2" device=""/>
 <part name="GND4" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
-<part name="U1" library="LR_vreg" deviceset="L78L33ACUTR" device=""/>
-<part name="U2" library="LR_op_amps" deviceset="TLV170IDBVR" device=""/>
+<part name="U2" library="LR_vreg" deviceset="L78L33ACUTR" device=""/>
+<part name="U3" library="LR_op_amps" deviceset="TLV170IDBVR" device=""/>
 <part name="P+1" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="V+" device=""/>
 <part name="GND5" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="GND11" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
@@ -15397,9 +15397,9 @@ All capacitors +/- 10% tolerance</text>
 <instance part="Q1" gate="A" x="73.66" y="93.98" smashed="yes" rot="MR270">
 <attribute name="NAME" x="68.58" y="99.06" size="2.54" layer="95"/>
 </instance>
-<instance part="U$1" gate="G$1" x="111.76" y="172.72"/>
+<instance part="U1" gate="G$1" x="111.76" y="172.72"/>
 <instance part="GND1" gate="1" x="93.98" y="160.02"/>
-<instance part="U$3" gate="G$1" x="48.26" y="55.88"/>
+<instance part="Q2" gate="G$1" x="48.26" y="55.88"/>
 <instance part="C2" gate="G$1" x="63.5" y="172.72"/>
 <instance part="C1" gate="G$1" x="20.32" y="175.26"/>
 <instance part="LED1" gate="G$1" x="15.24" y="76.2"/>
@@ -15407,8 +15407,8 @@ All capacitors +/- 10% tolerance</text>
 <instance part="GND2" gate="1" x="15.24" y="66.04"/>
 <instance part="D1" gate="G$1" x="160.02" y="165.1" rot="R90"/>
 <instance part="GND4" gate="1" x="160.02" y="154.94"/>
-<instance part="U1" gate="A" x="30.48" y="180.34"/>
-<instance part="U2" gate="G$1" x="124.46" y="91.44" smashed="yes">
+<instance part="U2" gate="A" x="30.48" y="180.34"/>
+<instance part="U3" gate="G$1" x="124.46" y="91.44" smashed="yes">
 <attribute name="NAME" x="127" y="86.995" size="1.778" layer="95"/>
 <attribute name="VALUE" x="127" y="93.98" size="1.778" layer="96"/>
 </instance>
@@ -15433,7 +15433,7 @@ All capacitors +/- 10% tolerance</text>
 <segment>
 <pinref part="GND7" gate="1" pin="GND"/>
 <wire x1="48.26" y1="50.8" x2="48.26" y2="38.1" width="0.1524" layer="91"/>
-<pinref part="U$3" gate="G$1" pin="S"/>
+<pinref part="Q2" gate="G$1" pin="S"/>
 </segment>
 <segment>
 <pinref part="GND8" gate="1" pin="GND"/>
@@ -15473,7 +15473,7 @@ All capacitors +/- 10% tolerance</text>
 <wire x1="259.08" y1="73.66" x2="259.08" y2="83.82" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="U$1" gate="G$1" pin="GND"/>
+<pinref part="U1" gate="G$1" pin="GND"/>
 <pinref part="GND1" gate="1" pin="GND"/>
 <wire x1="99.06" y1="167.64" x2="93.98" y2="167.64" width="0.1524" layer="91"/>
 <wire x1="93.98" y1="167.64" x2="93.98" y2="162.56" width="0.1524" layer="91"/>
@@ -15491,7 +15491,7 @@ All capacitors +/- 10% tolerance</text>
 <wire x1="63.5" y1="167.64" x2="63.5" y2="165.1" width="0.1524" layer="91"/>
 <wire x1="63.5" y1="165.1" x2="30.48" y2="165.1" width="0.1524" layer="91"/>
 <junction x="30.48" y="165.1"/>
-<pinref part="U1" gate="A" pin="GND"/>
+<pinref part="U2" gate="A" pin="GND"/>
 </segment>
 <segment>
 <pinref part="LED1" gate="G$1" pin="C"/>
@@ -15504,7 +15504,7 @@ All capacitors +/- 10% tolerance</text>
 <pinref part="GND4" gate="1" pin="GND"/>
 </segment>
 <segment>
-<pinref part="U2" gate="G$1" pin="V-"/>
+<pinref part="U3" gate="G$1" pin="V-"/>
 <pinref part="GND5" gate="1" pin="GND"/>
 <wire x1="124.46" y1="83.82" x2="124.46" y2="81.28" width="0.1524" layer="91"/>
 </segment>
@@ -15559,7 +15559,7 @@ All capacitors +/- 10% tolerance</text>
 <pinref part="D3" gate="A" pin="C"/>
 </segment>
 <segment>
-<pinref part="U2" gate="G$1" pin="V+"/>
+<pinref part="U3" gate="G$1" pin="V+"/>
 <pinref part="P+1" gate="1" pin="V+"/>
 <wire x1="124.46" y1="99.06" x2="124.46" y2="116.84" width="0.1524" layer="91"/>
 <pinref part="C4" gate="G$1" pin="1"/>
@@ -15577,10 +15577,10 @@ All capacitors +/- 10% tolerance</text>
 <junction x="40.64" y="53.34"/>
 <label x="38.1" y="53.34" size="1.778" layer="95" rot="R180" xref="yes"/>
 <pinref part="R4" gate="G$1" pin="1"/>
-<pinref part="U$3" gate="G$1" pin="G"/>
+<pinref part="Q2" gate="G$1" pin="G"/>
 </segment>
 <segment>
-<pinref part="U$1" gate="G$1" pin="!RST!"/>
+<pinref part="U1" gate="G$1" pin="!RST!"/>
 <wire x1="124.46" y1="172.72" x2="129.54" y2="172.72" width="0.1524" layer="91"/>
 <label x="129.54" y="172.72" size="1.778" layer="95" xref="yes"/>
 </segment>
@@ -15605,7 +15605,7 @@ All capacitors +/- 10% tolerance</text>
 <segment>
 <pinref part="R3" gate="G$1" pin="2"/>
 <wire x1="48.26" y1="66.04" x2="48.26" y2="60.96" width="0.1524" layer="91"/>
-<pinref part="U$3" gate="G$1" pin="D"/>
+<pinref part="Q2" gate="G$1" pin="D"/>
 </segment>
 </net>
 <net name="VOUT" class="0">
@@ -15627,7 +15627,7 @@ All capacitors +/- 10% tolerance</text>
 <junction x="20.32" y="180.34"/>
 <wire x1="20.32" y1="180.34" x2="17.78" y2="180.34" width="0.1524" layer="91"/>
 <label x="17.78" y="180.34" size="1.778" layer="95" rot="R180" xref="yes"/>
-<pinref part="U1" gate="A" pin="VIN"/>
+<pinref part="U2" gate="A" pin="VIN"/>
 </segment>
 </net>
 <net name="2_CELL" class="0">
@@ -15671,7 +15671,7 @@ All capacitors +/- 10% tolerance</text>
 <pinref part="TP2" gate="G$1" pin="P$1"/>
 </segment>
 <segment>
-<pinref part="U2" gate="G$1" pin="+IN"/>
+<pinref part="U3" gate="G$1" pin="+IN"/>
 <wire x1="116.84" y1="93.98" x2="114.3" y2="93.98" width="0.1524" layer="91"/>
 <label x="114.3" y="93.98" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
@@ -15737,7 +15737,7 @@ All capacitors +/- 10% tolerance</text>
 <pinref part="C2" gate="G$1" pin="1"/>
 <wire x1="60.96" y1="177.8" x2="63.5" y2="177.8" width="0.1524" layer="91"/>
 <label x="66.04" y="177.8" size="1.778" layer="95" xref="yes"/>
-<pinref part="U1" gate="A" pin="VOUT"/>
+<pinref part="U2" gate="A" pin="VOUT"/>
 <wire x1="63.5" y1="177.8" x2="66.04" y2="177.8" width="0.1524" layer="91"/>
 <wire x1="63.5" y1="175.26" x2="63.5" y2="177.8" width="0.1524" layer="91"/>
 <junction x="63.5" y="177.8"/>
@@ -15758,12 +15758,12 @@ All capacitors +/- 10% tolerance</text>
 <net name="V_DIV_BUF" class="0">
 <segment>
 <label x="154.94" y="91.44" size="1.778" layer="95" xref="yes"/>
-<pinref part="U2" gate="G$1" pin="OUT"/>
+<pinref part="U3" gate="G$1" pin="OUT"/>
 <wire x1="132.08" y1="91.44" x2="134.62" y2="91.44" width="0.1524" layer="91"/>
 <wire x1="134.62" y1="91.44" x2="134.62" y2="73.66" width="0.1524" layer="91"/>
 <wire x1="134.62" y1="73.66" x2="114.3" y2="73.66" width="0.1524" layer="91"/>
 <wire x1="114.3" y1="73.66" x2="114.3" y2="88.9" width="0.1524" layer="91"/>
-<pinref part="U2" gate="G$1" pin="-IN"/>
+<pinref part="U3" gate="G$1" pin="-IN"/>
 <wire x1="114.3" y1="88.9" x2="116.84" y2="88.9" width="0.1524" layer="91"/>
 <junction x="134.62" y="91.44"/>
 <wire x1="134.62" y1="91.44" x2="147.32" y2="91.44" width="0.1524" layer="91"/>
@@ -15776,7 +15776,7 @@ All capacitors +/- 10% tolerance</text>
 <junction x="114.3" y="73.66"/>
 </segment>
 <segment>
-<pinref part="U$1" gate="G$1" pin="VCC"/>
+<pinref part="U1" gate="G$1" pin="VCC"/>
 <wire x1="99.06" y1="177.8" x2="96.52" y2="177.8" width="0.1524" layer="91"/>
 <label x="96.52" y="177.8" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
