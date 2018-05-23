@@ -200,7 +200,7 @@ SW</text>
 <wire x1="4.1275" y1="5.08" x2="4.1275" y2="7.77875" width="0.254" layer="21"/>
 <wire x1="4.1275" y1="7.77875" x2="2.8575" y2="9.04875" width="0.254" layer="21"/>
 <text x="28.73375" y="14.605" size="1.016" layer="22" font="vector" rot="MR90">SN</text>
-<text x="27.14625" y="15.319375" size="1.016" layer="22" font="vector" rot="MR270">LVC Rev 6</text>
+<text x="27.14625" y="15.319375" size="1.016" layer="22" font="vector" rot="MR270">LVC Rev 6.1</text>
 <polygon width="0.254" layer="22">
 <vertex x="27.94" y="14.208125"/>
 <vertex x="30.48" y="14.208125"/>
